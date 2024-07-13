@@ -22,8 +22,8 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
 from config import var
-from AyiinXd import Ayiin, CMD_HELP, bot, ch
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import Lumi, CMD_HELP, bot, ch
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 
 @ayiin_cmd(pattern="help(?: |$)(.*)")
@@ -33,21 +33,21 @@ async def helpyins(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await eor(event, f"{CMD_HELP[args]}\n\n© AyiinChats")
+            await eor(event, f"{CMD_HELP[args]}\n\n© LumiereProject")
         else:
             await eod(
                 event,
                 f"**Modul {args} Tidak diketahui**, **Silahkan Ketik {var.CMD_HANDLER}help untuk melihat modul.**"
             )
     else:
-        AyiinUBOT = await bot.get_me()
-        BOT_USERNAME = AyiinUBOT.username
+        LumiUBOT = await bot.get_me()
+        BOT_USERNAME = LumiUBOT.username
         if BOT_USERNAME is not None:
             chat = "@Botfather"
             try:
                 results = await event.client.inline_query(
                     BOT_USERNAME,
-                    "@AyiinChats"
+                    "@QwertyStore"
                 )
                 await results[0].click(
                     event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
