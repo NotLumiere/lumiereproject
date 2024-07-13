@@ -21,7 +21,7 @@ from telethon.tl import types
 from telethon.utils import get_display_name, get_peer_id
 
 from config import DEVS, var
-from AyiinXd.ayiin import runcmd
+from Lumiere.lumi import runcmd
 
 
 async def async_searcher(
@@ -200,7 +200,7 @@ async def create_quotly(
 async def Carbon(
     code,
     base_url="https://carbonara-42.herokuapp.com/api/cook",
-    file_name="Ayiin-Userbot",
+    file_name="Lumiere-Userbot",
     **kwargs,
 ):
     kwargs["code"] = code
@@ -217,11 +217,11 @@ async def animator(media, mainevent, textevent):
     w, h = (-1, 512) if h > w else (512, -1)
     if not os.path.isdir(var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(var.TEMP_DOWNLOAD_DIRECTORY)
-    Ayiin = await mainevent.client.download_media(media, var.TEMP_DOWNLOAD_DIRECTORY)
+    Lumi = await mainevent.client.download_media(media, var.TEMP_DOWNLOAD_DIRECTORY)
     await textevent.edit("`Converting...`")
     await runcmd(
         f"ffmpeg -ss 00:00:00 -to 00:00:02.900 -i {Ayiin} -vf scale={w}:{h} -c:v libvpx-vp9 -crf 30 -b:v 560k -maxrate 560k -bufsize 256k -an Video.webm"
     )
-    os.remove(Ayiin)
+    os.remove(Lumi)
     vid = "Video.webm"
     return vid
