@@ -15,8 +15,8 @@ from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 from requests import get
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import (
+from Lumiere import CMD_HELP
+from Lumiere.lumi import (
     chrome,
     human_to_bytes,
     humanbytes,
