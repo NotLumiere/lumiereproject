@@ -15,9 +15,9 @@
 
 from secrets import choice
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin.truthdare import Dare as d, Truth as t
-from AyiinXd.ayiin import ayiin_cmd, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi.truthdare import Dare as d, Truth as t
+from Lumiere.lumi import ayiin_cmd, eor
 
 from . import cmd
 
