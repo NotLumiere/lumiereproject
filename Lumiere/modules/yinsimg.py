@@ -20,8 +20,8 @@ import os
 import cv2
 import numpy as np
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd
 
