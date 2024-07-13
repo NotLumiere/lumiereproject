@@ -22,8 +22,8 @@ from telethon.errors import (
 )
 
 from config import var
-from AyiinXd import (
-    Ayiin,
+from Lumiere import (
+    Lumi,
     CMD_LIST,
     LOAD_PLUG,
     LOGS,
@@ -182,26 +182,26 @@ def ayiin_cmd(
             except BaseException as e:
                 LOGS.exception(e)
 
-        if Ayiin:
+        if Lumi:
             if not disable_edited:
-                Ayiin.add_event_handler(
+                Lumi.add_event_handler(
                     wrapper, events.MessageEdited(
                         **args,
                         outgoing=True,
                         pattern=ayiin_reg
                     )
                 )
-            Ayiin.add_event_handler(
+            Lumi.add_event_handler(
                 wrapper, events.NewMessage(
                     **args,
                     outgoing=True,
                     pattern=ayiin_reg
                 )
             )
-        if Ayiin:
+        if Lumi:
             if allow_sudo:
                 if not disable_edited:
-                    Ayiin.add_event_handler(
+                    Lumi.add_event_handler(
                         wrapper,
                         events.MessageEdited(
                             **args,
@@ -209,7 +209,7 @@ def ayiin_cmd(
                             pattern=sudo_reg
                         ),
                     )
-                Ayiin.add_event_handler(
+                Lumi.add_event_handler(
                     wrapper,
                     events.NewMessage(
                         **args,
@@ -230,8 +230,8 @@ def ayiin_handler(
     **args,
 ):
     def decorator(func):
-        if Ayiin:
-            Ayiin.add_event_handler(func, events.NewMessage(**args))
+        if Lumi:
+            Lumi.add_event_handler(func, events.NewMessage(**args))
         return func
 
     return decorator
@@ -254,8 +254,8 @@ def asst_cmd(**args):
 
 def chataction(**args):
     def decorator(func):
-        if Ayiin:
-            Ayiin.add_event_handler(func, events.ChatAction(**args))
+        if Lumi:
+            Lumi.add_event_handler(func, events.ChatAction(**args))
         return func
 
     return decorator
