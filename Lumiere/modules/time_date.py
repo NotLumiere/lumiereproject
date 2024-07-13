@@ -12,8 +12,8 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd
 
 
 from . import cmd, var
