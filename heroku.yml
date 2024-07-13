@@ -1,0 +1,5 @@
+build: 
+  docker:
+      lumi: Dockerfile
+run:
+   lumi: bash start
