@@ -6,8 +6,8 @@ from telethon.sync import custom, events
 from telethon.tl.types import InputWebDocument
 
 from config import var
-from AyiinXd import Ayiin, CMD_HELP, bot, ibuild_keyboard, paginate_help
-from AyiinXd.ayiin import HOSTED_ON
+from Lumiere import Lumi, CMD_HELP, bot, ibuild_keyboard, paginate_help
+from Lumiere.Lumi import HOSTED_ON
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
@@ -38,10 +38,10 @@ async def inline_handler(event):
     builder = event.builder
     result = None
     query = event.text
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     if event.query.user_id == user.id and query.startswith(
-            "@AyiinChats"):
+            "@QwertyStore"):
         buttons = paginate_help(0, CMD_HELP, "helpme")
         result = await event.builder.photo(
             file=logoyins,
