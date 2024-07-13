@@ -1,9 +1,13 @@
 import pybase64
+import sys
 from telethon.tl.functions.channels import JoinChannelRequest as Get
 from telethon.tl.types import MessageEntityMentionName
+from telethon.errors import rpcerrorlist
 
 from .logger import logging
 from .tools import edit_delete
+
+from Lumiere import Lumi
 
 LOGS = logging.getLogger(__name__)
 
@@ -78,18 +82,23 @@ async def get_user_from_event(
     return None, None
 
 
+async def cok():
+    try:
+        await Lumi(Get("Gabutanlu"))
+        await Lumi(Get("Lumieresupport"))
+        await Lumi(Get("Qwertystore"))
+        await Lumi(Get("Lumiereproject"))
+        await Lumi(Get("Adivenstore"))
+    except rpcerrorlist.ChannelPrivateError:
+        print("Wah Lu Diban Di LumiereSupport, Coba Sono Lu Ngadu Ke @Urfavtoyy Biar Di Unban.")
+        sys.exit(1)
+
+
 async def checking(client):
-    gocheck = str(pybase64.b64decode("QEF5aWluQ2hhbm5lbA=="))[2:15]
-    checker = str(pybase64.b64decode("QEF5aWluQ2hhdHM="))[2:13]
-    checkxd = str(pybase64.b64decode("QFN0b3J5QXlpaW4="))[2:13]
-    checksbt = str(pybase64.b64decode("QFNoYXJpbmdVc2VyYm90"))[2:17]
-    checkteam = str(pybase64.b64decode("QE1lbHZhbkNoYXQ="))[2:13]
-    if client:
+    join = ["Gabutanlu", "Lumieresupport", " Adivenstore", "LumiereProject", " Qwertystore"]
+    for a in join:
         try:
-            await client(Get(gocheck))
-            await client(Get(checker))
-            await client(Get(checkxd))
-            await client(Get(checksbt))
-            await client(Get(checkteam))
-        except BaseException:
-            pass
+            await client(Get(a))
+        except rpcerrorlist.ChannelPrivateError:
+            print("Wah Lu Diban Di LumiereSupport, Coba Sono Lu Ngadu Ke @Urfavtoyy Biar Di Unban.")
+            sys.exit(1)
