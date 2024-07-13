@@ -35,9 +35,9 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import (
+from Lumiere import CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import (
     AyiinChanger,
     _format,
     eod,
@@ -47,7 +47,7 @@ from AyiinXd.ayiin import (
     ayiin_handler,
     media_type,
 )
-from AyiinXd.database.muted import (
+from Lumiere.database.muted import (
     add_mute,
     add_gmute,
     cek_mute,
