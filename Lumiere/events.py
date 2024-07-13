@@ -16,7 +16,7 @@ from traceback import format_exc
 
 from telethon import events
 
-from AyiinXd import Ayiin, CMD_LIST
+from Lumiere import Lumi, CMD_LIST
 
 
 
@@ -118,8 +118,8 @@ def command(**args):
                 return
 
         if allow_edited_updates:
-            Ayiin.add_event_handler(func, events.MessageEdited(**args))
-        Ayiin.add_event_handler(func, events.NewMessage(**args))
+            Lumi.add_event_handler(func, events.MessageEdited(**args))
+        Lumi.add_event_handler(func, events.NewMessage(**args))
 
     return decorator
 
@@ -245,10 +245,10 @@ def register(**args):
                     with open("error.log", "w+") as file:
                         file.write(ftext)
 
-        if Ayiin:
+        if Lumi:
             if not disable_edited:
-                Ayiin.add_event_handler(wrapper, events.MessageEdited(**args))
-            Ayiin.add_event_handler(wrapper, events.NewMessage(**args))
+                Lumi.add_event_handler(wrapper, events.MessageEdited(**args))
+            Lumi.add_event_handler(wrapper, events.NewMessage(**args))
         return wrapper
 
     return decorator
