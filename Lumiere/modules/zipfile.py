@@ -11,8 +11,8 @@ import time
 import zipfile
 from datetime import date
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, progress
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, progress
 
 from . import cmd, var
 
