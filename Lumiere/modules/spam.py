@@ -9,10 +9,10 @@ from telethon.tl import functions, types
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.utils import get_display_name
 
-from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.database.variable import set_var, get_var
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.ayiin.tools import media_type
+from Lumiere import CMD_HELP, LOGS
+from Lumiere.database.variable import set_var, get_var
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.lumi.tools import media_type
 
 from . import cmd, var
 
