@@ -7,8 +7,8 @@ from datetime import datetime
 
 from telethon.tl import functions, types
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, bash
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, ayiin_handler, bash
 
 from . import cmd
 
