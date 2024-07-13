@@ -16,8 +16,8 @@ import time
 from datetime import datetime
 from secrets import choice
 
-from AyiinXd import CMD_HELP, StartTime
-from AyiinXd.events import register
+from Lumiere import CMD_HELP, StartTime
+from Lumiere.events import register
 
 from . import DEVS, cmd
 from .ping import get_readable_time
@@ -49,7 +49,7 @@ async def _(ping):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
-    message = "**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧**\n\n✧ **ᴘɪɴɢᴇʀ :** `{} ms`\n✧ **ᴜᴘᴛɪᴍᴇ :** `{}`\n✧ **ᴏᴡɴᴇʀ :** `{}`\n✧ **ɪᴅ :** `{}`"
+    message = "**× Lumiere-Userbot ×**\n\n× **ᴘɪɴɢᴇʀ :** `{} ms`\n× **ᴜᴘᴛɪᴍᴇ :** `{}`\n× **ᴏᴡɴᴇʀ :** `{}`\n× **ɪᴅ :** `{}`"
     await ping.reply(
         message.format(
             duration,
@@ -83,8 +83,8 @@ async def ayiin(ganteng):
 
 CMD_HELP.update(
     {
-        "yinsping": f"**Plugin:** `yinsping`\
-        \n\n  »  **Perintah : **`Perintah Ini Hanya Untuk Devs Ayiin-Userbot Tod.`\
+        "Devping": f"**Plugin:** `devping`\
+        \n\n  »  **Perintah : **`Perintah Ini Hanya Untuk Devs Lumiere-Userbot Tod.`\
         \n  »  **Kegunaan :** __Silahkan Ketik `{cmd}ping` Untuk Publik.__\
     "
     }
