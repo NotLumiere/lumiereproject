@@ -6,8 +6,8 @@ from telethon.sync import custom, events
 from telethon.tl.types import InputWebDocument
 
 from config import var
-from AyiinXd import Ayiin, CMD_HELP, bot, ibuild_keyboard, paginate_help
-from AyiinXd.ayiin import HOSTED_ON
+from Lumiere import Lumi, CMD_HELP, bot, ibuild_keyboard, paginate_help
+from Lumiere.lumi import HOSTED_ON
 
 
 
@@ -41,7 +41,7 @@ main_help_button = [
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
@@ -63,11 +63,11 @@ async def inline_handler(event):
     builder = event.builder
     result = None
     query = event.text
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     botusername = (await event.client.get_me()).username
     if event.query.user_id == uid and query.startswith(
-            "@AyiinChats"):
+            "@QwertyStore"):
         buttons = paginate_help(0, dugmeler, "helpme")
         result = await event.builder.photo(
             file=logoyins,
@@ -78,22 +78,22 @@ async def inline_handler(event):
     elif query.startswith("repo"):
         result = builder.article(
             title="Repository",
-            description="Repository Ayiin - Userbot",
-            url="https://t.me/AyiinChats",
+            description="Repository Lumiere - Userbot",
+            url="https://t.me/Lumieresupport",
             thumb=InputWebDocument(
                 var.INLINE_PIC,
                 0,
                 "image/jpeg",
                 []),
-            text="**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✧ **sᴜᴘᴘᴏʀᴛ :** @AyiinChats\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+            text="**Lumiere-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [Lumiere](https://t.me/Urfavtoyy)\n✧ **sᴜᴘᴘᴏʀᴛ :** @Lumieresupport\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Lumiere-Userbot](https://github.com/NotLumiere/Lumiere-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
             buttons=[
                 [
                     custom.Button.url(
                         "ɢʀᴏᴜᴘ",
-                        "https://t.me/AyiinChats"),
+                        "https://t.me/Lumieresupport"),
                     custom.Button.url(
                         "ʀᴇᴘᴏ",
-                        "https://github.com/AyiinXd/Ayiin-Userbot"),
+                        "https://github.com/NotLumiere/Lumiere-Userbot"),
                 ],
             ],
             link_preview=False,
@@ -132,23 +132,23 @@ async def inline_handler(event):
         )
     else:
         result = builder.article(
-            title="✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✨",
-            description="Ayiin - Userbot | Telethon",
-            url="https://t.me/AyiinChannel",
+            title="× Lumiere Userbot ×",
+            description="Lumiere - Userbot | Telethon",
+            url="https://t.me/LumiereProject",
             thumb=InputWebDocument(
                 var.INLINE_PIC,
                 0,
                 "image/jpeg",
                 []),
-            text=f"**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ:** {botusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @AyiinChannel\n➖➖➖➖➖➖➖➖➖➖",
+            text=f"**Lumiere-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ:** {botusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @LumiereProject\n➖➖➖➖➖➖➖➖➖➖",
             buttons=[
                 [
                     custom.Button.url(
                         "ɢʀᴏᴜᴘ",
-                        "https://t.me/AyiinChats"),
+                        "https://t.me/Lumieresupport"),
                     custom.Button.url(
                         "ʀᴇᴘᴏ",
-                        "https://github.com/AyiinXd/Ayiin-Userbot"),
+                        "https://github.com/NotLumiere/Lumiere-Userbot"),
                 ],
             ],
             link_preview=False,
