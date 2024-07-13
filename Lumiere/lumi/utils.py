@@ -113,11 +113,11 @@ async def autobot():
             sys.exit(1)
         await Lumi.send_message(bf, name)
         await asyncio.sleep(1)
-        isdone = (await Ayiin.get_messages(bf, limit=1))[0].text
+        isdone = (await Lumi.get_messages(bf, limit=1))[0].text
         if not isdone.startswith("Good."):
             await Lumi.send_message(bf, "My Assistant Bot")
             await asyncio.sleep(1)
-            isdone = (await Ayiin.get_messages(bf, limit=1))[0].text
+            isdone = (await Lumi.get_messages(bf, limit=1))[0].text
             if not isdone.startswith("Good."):
                 LOGS.info(
                     "Silakan buat Bot dari @BotFather dan tambahkan tokennya di var BOT_TOKEN"
@@ -271,7 +271,7 @@ def load_module(shortname):
         name = "Lumiere.modules.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
-        mod.Ayiin = Ayiin
+        mod.Lumi = Lumi
         mod.LOGS = LOGS
         mod.CMD_HELP = CMD_HELP
         mod.logger = logging.getLogger(shortname)
