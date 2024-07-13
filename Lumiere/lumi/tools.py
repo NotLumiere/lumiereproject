@@ -53,8 +53,8 @@ from telethon.tl.types import (
 from yt_dlp import YoutubeDL
 
 from config import var
-from AyiinXd import Ayiin, LOGS
-from AyiinXd.ayiin.format import md_to_text, paste_message
+from Lumiere import Lumi, LOGS
+from Lumiere.lumi.format import md_to_text, paste_message
 
 from ._hosting import where_hosted
 from .FastTelethon import download_file as downloadable
@@ -65,11 +65,11 @@ logs = logging.getLogger(__name__)
 
 
 def AyiinChanger(xd):
-    ayiin = xd
-    if ayiin:
-        berubah = eval(ayiin)
+    lumi = xd
+    if lumi:
+        berubah = eval(lumi)
     else:
-        berubah = ayiin
+        berubah = lumi
     return berubah
 
 
@@ -259,7 +259,7 @@ def human_to_bytes(size: str) -> int:
 
 
 async def is_admin(chat_id, user_id):
-    req_jo = await Ayiin(GetParticipantRequest(channel=chat_id, user_id=user_id))
+    req_jo = await Lumi(GetParticipantRequest(channel=chat_id, user_id=user_id))
     chat_participant = req_jo.participant
     return isinstance(
         chat_participant, (ChannelParticipantCreator, ChannelParticipantAdmin)
