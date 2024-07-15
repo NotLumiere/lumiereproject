@@ -12,8 +12,8 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd
 
@@ -33,13 +33,13 @@ async def stext(event):
     draw = ImageDraw.Draw(image)
     fontsize = 200
     font = ImageFont.truetype(
-        "AyiinXd/ayiin/styles/ProductSans-BoldItalic.ttf",
+        "Lumiere/lumi/styles/ProductSans-BoldItalic.ttf",
         size=fontsize)
 
     while draw.multiline_textsize(sticktext, font=font) > (512, 512):
         fontsize -= 3
         font = ImageFont.truetype(
-            "AyiinXd/ayiin/styles/ProductSans-BoldItalic.ttf",
+            "Lumiere/lumi/styles/ProductSans-BoldItalic.ttf",
             size=fontsize)
 
     width, height = draw.multiline_textsize(sticktext, font=font)
