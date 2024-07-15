@@ -7,9 +7,9 @@ import os
 import heroku3
 from telethon.tl.functions.users import GetFullUserRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import AyiinChanger, ayiin_cmd, eod, eor
-from AyiinXd.database.sudoer import add_sudo, del_sudo, sudoer
+from Lumiere import CMD_HELP
+from Lumiere.lumi import AyiinChanger, ayiin_cmd, eod, eor
+from Lumiere.database.sudoer import add_sudo, del_sudo, sudoer
 
 from . import cmd
 
