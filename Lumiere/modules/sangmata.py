@@ -8,8 +8,8 @@ import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import (
+from Lumiere import CMD_HELP
+from Lumiere.lumi import (
     _format,
     ayiin_cmd,
     eod,
