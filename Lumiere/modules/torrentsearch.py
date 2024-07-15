@@ -13,13 +13,13 @@ import os
 import requests
 from bs4 import BeautifulSoup as bs
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.events import ayiin_cmd
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.events import ayiin_cmd
 
 from . import cmd, var
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"ts (.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"ts (.*)"))
 async def gengkapak(e):
     await e.edit("`Harap tunggu, mengambil hasil...`")
     query = e.pattern_match.group(1)
@@ -74,7 +74,7 @@ def dogbin(magnets):
     return urls
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"tos(?: |$)(.*)"))
 async def tor_search(event):
     if event.fwd_from:
         return
