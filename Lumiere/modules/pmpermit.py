@@ -47,7 +47,7 @@ DEF_UNAPPROVED_MSG =  (
 )
 
 
-@Ayiin.on(events.NewMessage(incoming=True))
+@Lumi.on(events.NewMessage(incoming=True))
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
         Will block retarded nibbas automatically. """
@@ -76,10 +76,10 @@ async def permitpm(event):
                 if event.chat_id not in apprv:
                     try:
                         approve(event.chat_id)
-                        await Lumi.send_message(var.BOTLOG_CHATID, f"**#AUTO_APPROVED_DEVELOPER**\n\n👑 **Developer:** [{sender.first_name}](tg://user?id={sender.id})\n💬 `Developer Ayiin-Userbot Telah Mengirimi Anda Pesan...`")
+                        await Lumi.send_message(var.BOTLOG_CHATID, f"**#AUTO_APPROVED_DEVELOPER**\n\n👑 **Developer:** [{sender.first_name}](tg://user?id={sender.id})\n💬 `Developer Lumiere-Userbot Telah Mengirimi Anda Pesan...`")
                         await Lumi.send_message(
                             event.chat_id,
-                            f"**Menerima Pesan!!!**\n**Terdeteksi [{sender.first_name}](tg://user?id={sender.id}) Adalah Developer Ayiin-Userbot**"
+                            f"**Menerima Pesan!!!**\n**Terdeteksi [{sender.first_name}](tg://user?id={sender.id}) Adalah Developer Lumiere-Userbot**"
                         )
                         return
                     except BaseException as e:
