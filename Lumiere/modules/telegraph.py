@@ -11,8 +11,8 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd, var
 
