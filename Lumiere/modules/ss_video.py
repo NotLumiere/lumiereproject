@@ -9,8 +9,8 @@ import time
 
 from telethon.tl.types import DocumentAttributeFilename
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, bash, eor, progress
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, bash, eor, progress
 
 from . import cmd
 
