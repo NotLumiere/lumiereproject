@@ -14,8 +14,8 @@ from telethon.tl.functions.contacts import GetBlockedRequest
 from telethon.tl.functions.messages import GetAllStickersRequest
 from telethon.tl.types import Channel, Chat, User
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd
 
