@@ -58,12 +58,12 @@ from yt_dlp.utils import (
     XAttrMetadataError,
 )
 
-from AyiinXd import (
-    Ayiin,
+from Lumiere import (
+    Lumi,
     CMD_HELP,
     LOGS
 )
-from AyiinXd.ayiin import (
+from Lumiere.lumi import (
     ayiin_cmd,
     chrome,
     eod,
@@ -72,7 +72,7 @@ from AyiinXd.ayiin import (
     options,
     progress,
 )
-from AyiinXd.ayiin.FastTelethon import upload_file
+from Lumiere.lumi.FastTelethon import upload_file
 
 from . import cmd, var
 from .upload_download import get_video_thumb
@@ -230,7 +230,7 @@ async def wiki(wiki_q):
         await wiki_q.client.send_file(
             wiki_q.chat_id,
             "output.txt",
-            thumb="AyiinXd/resources/logo.jpg",
+            thumb="Lumiere/resources/logo.jpg",
             reply_to=wiki_q.id,
             caption="**Output terlalu besar, dikirim sebagai file**",
         )
@@ -641,7 +641,7 @@ async def kbg(remob):
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
         with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "ayiin_bg.png"
+            remove_bg_image.name = "lumi_bg.png"
             await remob.client.send_file(
                 remob.chat_id,
                 remove_bg_image,
@@ -699,7 +699,7 @@ async def ocr(event):
     if not os.path.isdir(var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(var.TEMP_DOWNLOAD_DIRECTORY)
     lang_code = event.pattern_match.group(1)
-    downloaded_file_name = await Ayiin.download_media(
+    downloaded_file_name = await Lumi.download_media(
         await event.get_reply_message(), var.TEMP_DOWNLOAD_DIRECTORY
     )
     test_file = await ocr_space_file(filename=downloaded_file_name, language=lang_code)
