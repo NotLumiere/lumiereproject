@@ -11,8 +11,8 @@ from telethon.tl.types import UserStatusOnline as onn
 from telethon.tl.types import UserStatusRecently as rec
 from telethon.utils import get_display_name
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd
 
 from . import cmd
 
