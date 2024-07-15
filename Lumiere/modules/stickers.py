@@ -32,11 +32,11 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_document
 
-from AyiinXd import CMD_HELP
-from AyiinXd import bot
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.ayiin.misc import animator, create_quotly
-from AyiinXd.database.variable import cek_var, get_var, set_var
+from Lumiere import CMD_HELP
+from Lumiere import bot
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.lumi.misc import animator, create_quotly
+from Lumiere.database.variable import cek_var, get_var, set_var
 
 from . import (
     cmd,
@@ -86,7 +86,7 @@ async def kang(args):
             in message.media.document.attributes
         ):
             emoji = message.media.document.attributes[1].alt
-            if emoji != "✨":
+            if emoji != "🗿":
                 emojibypass = True
     elif message.file and "tgsticker" in message.file.mime_type:
         xx = await eor(args, f"`{choice(KANGING_STR)}`")
@@ -107,7 +107,7 @@ async def kang(args):
             await animator(message, args, xx)
             await xx.edit(f"`{choice(KANGING_STR)}`")
         is_video = True
-        emoji = "✨"
+        emoji = "🗿"
         emojibypass = True
         photo = 1
     else:
@@ -118,7 +118,7 @@ async def kang(args):
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "✨"
+            emoji = "🗿"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]
@@ -380,7 +380,7 @@ async def _(event):
                 functions.stickers.CreateStickerSetRequest(
                     user_id=OWNER_ID,
                     title=pname,
-                    short_name=f"Ayiin_{un_}_V{pack}_by_{bot_un}",
+                    short_name=f"Lumi_{un_}_V{pack}_by_{bot_un}",
                     stickers=stcrs,
                 )
             )
