@@ -8,8 +8,8 @@
 
 from time import sleep
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, edit_or_reply
 
 from . import cmd
 
@@ -122,7 +122,7 @@ async def _(kontol):
 
 CMD_HELP.update(
     {
-        "yinshack": f"**Plugin : **`yinshack`\
+        "hack": f"**Plugin : **`hack`\
         \n\n  »  **Perintah :** `{cmd}hack`\
         \n  »  **Kegunaan : **Coba sendiri tod\
         \n\n**Klo mau Req, kosa kata dari lu Bisa pake Module costum. Ketik** `{cmd}help costum`\
