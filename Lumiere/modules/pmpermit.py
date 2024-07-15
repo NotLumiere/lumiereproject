@@ -14,8 +14,8 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
-from AyiinXd import CMD_HELP, COUNT_PM, LASTMSG, LOGS, Ayiin
-from AyiinXd.database.permit import (
+from Lumiere import CMD_HELP, COUNT_PM, LASTMSG, LOGS, Lumi
+from Lumiere.database.permit import (
     approve,
     del_permit_message,
     disapprove,
@@ -25,9 +25,9 @@ from AyiinXd.database.permit import (
     set_mode_permit,
     set_permit_message
 )
-from AyiinXd.database.variable import del_var, get_var, set_var
-from AyiinXd.events import ayiin_cmd
-from AyiinXd.ayiin import AyiinChanger, eod, eor
+from Lumiere.database.variable import del_var, get_var, set_var
+from Lumiere.events import ayiin_cmd
+from Lumiere.ayiin import AyiinChanger, eod, eor
 
 from . import DEVS, cmd, var
 
@@ -77,8 +77,8 @@ async def permitpm(event):
                 if event.chat_id not in apprv:
                     try:
                         approve(event.chat_id)
-                        await Ayiin.send_message(var.BOTLOG_CHATID, f"**#AUTO_APPROVED_DEVELOPER**\n\n👑 **Developer:** [{sender.first_name}](tg://user?id={sender.id})\n💬 `Developer Ayiin-Userbot Telah Mengirimi Anda Pesan...`")
-                        await Ayiin.send_message(
+                        await Lumi.send_message(var.BOTLOG_CHATID, f"**#AUTO_APPROVED_DEVELOPER**\n\n👑 **Developer:** [{sender.first_name}](tg://user?id={sender.id})\n💬 `Developer Ayiin-Userbot Telah Mengirimi Anda Pesan...`")
+                        await Lumi.send_message(
                             event.chat_id,
                             f"**Menerima Pesan!!!**\n**Terdeteksi [{sender.first_name}](tg://user?id={sender.id}) Adalah Developer Ayiin-Userbot**"
                         )
@@ -174,7 +174,7 @@ async def auto_accept(event):
                     )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"notifoff$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"notifoff$"))
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     set_var("NOTIF_OFF", True)
@@ -183,7 +183,7 @@ async def notifoff(noff_event):
     )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"notifon$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"notifon$"))
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     del_var("NOTIF_OFF")
@@ -192,7 +192,7 @@ async def notifon(non_event):
     )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"(?:setuju|ok)\s?(.)?"))
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     apprv = AyiinChanger(is_approved())
@@ -259,7 +259,7 @@ async def approvepm(apprvpm):
         LOGS.error(format_exc())
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"(?:tolak|nopm)\s?(.)?"))
 async def disapprovepm(disapprvpm):
     apprv = AyiinChanger(is_approved())
     if disapprvpm.reply_to_msg_id:
@@ -346,7 +346,7 @@ async def disapprovepm(disapprvpm):
             )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"block$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"block$"))
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -366,7 +366,7 @@ async def blockpm(block):
 
     disapprove(uid)
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"unblock$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"unblock$"))
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -376,7 +376,7 @@ async def unblockpm(unblock):
         await unblock.edit("**Anda Telah Bebas Dari Blokir Karna Tuan Saya Lagi Baik.**")
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"permit (on|off)(?: |$)(\w*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"permit (on|off)(?: |$)(\w*)"))
 async def Setting_permit_mode(cust_msg):
     conf = cust_msg.pattern_match.group(1)
     if conf.lower() == "on":
@@ -394,7 +394,7 @@ async def Setting_permit_mode(cust_msg):
         )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not get_mode_permit():
