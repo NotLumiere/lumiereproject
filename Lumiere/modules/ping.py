@@ -14,8 +14,8 @@ from datetime import datetime
 from time import sleep
 from speedtest import Speedtest
 
-from AyiinXd import CMD_HELP, StartTime
-from AyiinXd.ayiin import edit_or_reply, humanbytes, ayiin_cmd
+from Lumiere import CMD_HELP, StartTime
+from Lumiere.lumi import edit_or_reply, humanbytes, ayiin_cmd
 
 from . import cmd
 
@@ -51,19 +51,19 @@ async def get_readable_time(seconds: int) -> str:
 async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    Ayiin = await edit_or_reply(ping, "**✧**")
-    await Ayiin.edit("**✧✧**")
-    await Ayiin.edit("**✧✧✧**")
-    await Ayiin.edit("**✧✧✧✧**")
-    await Ayiin.edit("**✧✧✧✧✧**")
+    Lumi = await edit_or_reply(ping, "**×**")
+    await Lumi.edit("**××**")
+    await Lumi.edit("**×××**")
+    await Lumi.edit("**××××**")
+    await Lumi.edit("**×××××**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
-    await Ayiin.edit("⚡")
+    await Lumi.edit("⚡")
     sleep(3)
-    await Ayiin.edit(
+    await Lumi.edit(
         f"""
-**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧**
+**× Lumiere - Userbot ×**
 
 ✧ **ᴘɪɴɢ :** `{duration}ms`
 ✧ **ᴜᴘᴛɪᴍᴇ :** `{uptime}`
