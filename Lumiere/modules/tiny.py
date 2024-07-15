@@ -14,8 +14,8 @@ import os
 import cv2
 from PIL import Image
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import bash, ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import bash, ayiin_cmd
 
 from . import cmd
 
