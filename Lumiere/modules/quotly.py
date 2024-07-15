@@ -14,9 +14,9 @@ from secrets import choice
 
 from telethon.tl.functions.users import GetFullUserRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.ayiin.misc import create_quotly
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.lumi.misc import create_quotly
 
 from . import cmd
 
@@ -229,7 +229,7 @@ async def quotly(event):
         file = await create_quotly(reply_, bg=match, reply=replied_to, sender=user)
     except Exception as er:
         return await msg.edit("**KESALAHAN : **`{}`".format(er))
-    message = await reply.reply("Quotly by Ayiin-Userbot", file=file)
+    message = await reply.reply("Quotly by Lumiere-Userbot", file=file)
     remove(file)
     await msg.delete()
     return message
