@@ -1,8 +1,8 @@
 from asyncio import sleep
 from secrets import choice
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, deEmojify, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, deEmojify, eod, eor
 
 from . import cmd
 
