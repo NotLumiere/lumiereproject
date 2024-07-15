@@ -9,10 +9,10 @@ from os import environ, execle, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import HOSTED_ON, ayiin_cmd, eod, eor, install_requirements
-from AyiinXd.database.variable import del_var, set_var
+from Lumiere import CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import HOSTED_ON, ayiin_cmd, eod, eor, install_requirements
+from Lumiere.database.variable import del_var, set_var
 
 from . import cmd, var
 
