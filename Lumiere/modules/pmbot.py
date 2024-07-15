@@ -10,14 +10,14 @@ from math import floor
 from telethon.errors import BadRequestError, FloodWaitError, ForbiddenError
 from telethon.utils import get_display_name
 
-from AyiinXd import CMD_HELP, OWNER_ID, bot
-from AyiinXd.database.bot_blacklist import (
+from Lumiere import CMD_HELP, OWNER_ID, bot
+from Lumiere.database.bot_blacklist import (
     add_user_to_bl,
     check_is_black_list,
     get_all_bl_users,
     rem_user_from_bl,
 )
-from AyiinXd.ayiin import (
+from Lumiere.lumi import (
     _format,
     asst_cmd,
     edit_delete,
@@ -26,12 +26,12 @@ from AyiinXd.ayiin import (
     reply_id,
     time_formatter,
 )
-from AyiinXd.database.bot_pms import get_user_id
-from AyiinXd.database.bot_start import (
+from Lumiere.database.bot_pms import get_user_id
+from Lumiere.database.bot_start import (
     del_starter_from_db,
     get_all_starters,
 )
-from AyiinXd.database.variable import del_var, get_var, set_var
+from Lumiere.database.variable import del_var, get_var, set_var
 
 from . import cmd, var
 
