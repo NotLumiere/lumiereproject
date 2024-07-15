@@ -22,9 +22,9 @@ from natsort import os_sorted
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 
-from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.ayiin import ayiin_cmd, eor, humanbytes, progress, run_cmd
-from AyiinXd.ayiin.FastTelethon import download_file, upload_file
+from Lumiere import CMD_HELP, LOGS
+from Lumiere.lumi import ayiin_cmd, eor, humanbytes, progress, run_cmd
+from Lumiere.lumi.FastTelethon import download_file, upload_file
 
 from . import cmd, var
 
