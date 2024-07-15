@@ -20,8 +20,8 @@ from shutil import which
 import psutil
 from telethon import __version__, version
 
-from AyiinXd import CMD_HELP, StartTime
-from AyiinXd.ayiin import (
+from Lumiere import CMD_HELP, StartTime
+from Lumiere.lumi import (
     HOSTED_ON,
     bash,
     edit_or_reply,
@@ -173,14 +173,14 @@ async def bot_ver(event):
         )
 
 
-@ayiin_cmd(pattern="(?:alive|yinson)\\s?(.)?")
+@ayiin_cmd(pattern="(?:alive|live)\\s?(.)?")
 async def amireallyalive(alive):
     user = await alive.client.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"**Tʜᴇ [Aʏɪɪɴ-Usᴇʀʙᴏᴛ](https://github.com/AyiinXd/Ayiin-Userbot)**\n\n"
+        f"**THE [Lumiere-Userbot](https://github.com/NotLumiere/Lumiere-Userbot)**\n\n"
         f"**{alive_text}**\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
         f"{emoji} **Aʏɪɪɴ Vᴇʀsɪᴏɴ :** `{var.BOT_VER}`\n"
@@ -227,7 +227,7 @@ CMD_HELP.update(
 CMD_HELP.update(
     {
         "alive": f"**Plugin : **`alive`\
-        \n\n  »  **Perintah :** `{cmd}alive` atau `{cmd}yinson`\
+        \n\n  »  **Perintah :** `{cmd}alive` atau `{cmd}live`\
         \n  »  **Kegunaan : **Untuk melihat apakah bot Anda berfungsi atau tidak.\
     "
     }
