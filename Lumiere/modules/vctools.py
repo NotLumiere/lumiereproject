@@ -19,9 +19,9 @@ from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from AyiinXd import Ayiin, CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
+from Lumiere import Lumi, CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import ayiin_cmd, edit_delete, edit_or_reply
 
 from . import cmd
 
@@ -130,14 +130,14 @@ async def join_vc(a):
             return await xx.edit(f'ERROR: {e}')
     else:
         chat_id = a.chat_id
-    if not Ayiin.calls.is_connected:
+    if not Lumi.calls.is_connected:
         try:
-            await Ayiin.calls.join(chat_id)
+            await Lumi.calls.join(chat_id)
             await xx.edit(
-                f"⍟ [{yins.first_name}](tg://user?id={yins.id})\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+                f"×× [{yins.first_name}](tg://user?id={yins.id})\n\n❏ **Berhasil Bergabung Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
             )
             await asyncio.sleep(1)
-            await Ayiin.calls.set_is_mute(True)
+            await Lumi.calls.set_is_mute(True)
         except Exception as e:
             await xx.edit(f'ERROR: {e}')
     else:
@@ -156,7 +156,7 @@ async def leave_vc(event):
     if Ayiin.calls.is_connected:
         await Ayiin.calls.leave()
         await xx.edit(
-            f"⍟ [{yins.first_name}](tg://user?id={yins.id})\n\n❏ **Berhasil Meninggalkan Obrolan Suara**\n└ **Chat ID:** `{event.chat_id}`"
+            f"×× [{yins.first_name}](tg://user?id={yins.id})\n\n❏ **Berhasil Meninggalkan Obrolan Suara**\n└ **Chat ID:** `{event.chat_id}`"
         )
         return
     else:
