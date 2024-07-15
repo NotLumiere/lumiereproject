@@ -14,9 +14,9 @@ from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd, eod
+from Lumiere import CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import ayiin_cmd, eod
 
 from . import DEVS, cmd
 
