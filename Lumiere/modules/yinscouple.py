@@ -11,8 +11,8 @@
 from secrets import choice
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eor
 
 from . import cmd
 
