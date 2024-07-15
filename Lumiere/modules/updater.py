@@ -26,7 +26,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(xx, ac_br, changelog):
-    changelog_str = f"**✧ Tersedia Pembaruan Untuk [{ac_br}] \n\n✧ Pembaruan:**\n\n{changelog}\n"
+    changelog_str = f"**× Tersedia Pembaruan Untuk [{ac_br}] \n\n× Pembaruan:**\n\n{changelog}\n"
     if len(changelog_str) > 4096:
         await eor(xx, "**Changelog terlalu besar, dikirim sebagai file.**")
         with open("output.txt", "w+") as file:
@@ -91,7 +91,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
                 )
             await eor(
                 xx,
-                "**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧** `Berhasil Di Update Userbot bisa di gunakan kembali.`"
+                "**×× Lumiere - Userbot ××** `Berhasil Di Update Userbot bisa di gunakan kembali.`"
             )
 
         else:
@@ -105,7 +105,7 @@ async def deploy(xx, repo, ups_rem, ac_br, txt):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await install_requirements()
-        args = [sys.executable, "-m", "AyiinXd"]
+        args = [sys.executable, "-m", "Lumiere"]
         execle(sys.executable, *args, environ)
 
 
@@ -117,14 +117,14 @@ async def update(xx, repo, ups_rem, ac_br):
     await install_requirements()
     await eor(
         xx,
-        "**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧** `Berhasil Di Update Userbot bisa di gunakan kembali.`"
+        "**×× Lumiere - Userbot ××** `Berhasil Di Update Userbot bisa di gunakan kembali.`"
     )
 
     del_var("restartstatus")
     set_var("restartstatus", f"{xx.chat_id}\n{xx.id}")
 
     # Spin a new instance of bot
-    args = [sys.executable, "-m", "AyiinXd"]
+    args = [sys.executable, "-m", "Lumiere"]
     execle(sys.executable, *args, environ)
 
 
@@ -143,7 +143,7 @@ async def upstream(event):
         xx = await eor(event, "`Memeriksa pembaruan, harap tunggu....`")
     conf = event.pattern_match.group(1).strip()
     off_repo = b64decode(
-        "aHR0cHM6Ly9naXRodWIuY29tL0F5aWluWGQvQXlpaW4tVXNlcmJvdA=="
+        "aHR0cHM6Ly9naXRodWIuY29tL05vdEx1bWllcmUvTHVtaWVyZS1Vc2VyYm90"
     ).decode("utf-8")
     force_update = False
     try:
@@ -181,19 +181,19 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if conf == "deploy":
-        await xx.edit("**[•]** - Proses Update\n✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧ : `Menginstall Pembaruan...`")
+        await xx.edit("**[•]** - Proses Update\n×× Lumiere - Userbot ×× : `Menginstall Pembaruan...`")
         await deploy(xx, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and not force_update:
-        await eod(xx, "**✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧ Sudah Versi Terbaru**")
+        await eod(xx, "**×× Lumiere - Userbot ×× Sudah Versi Terbaru**")
         return repo.__del__()
 
     if conf == "" and not force_update:
         await print_changelogs(xx, ac_br, changelog)
         await xx.delete()
         return await event.respond(
-            f"**Ketik** `{cmd}update deploy` **Untuk Mengupdate ✧ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✧**"
+            f"**Ketik** `{cmd}update deploy` **Untuk Mengupdate ×× Lumiere - Userbot ××**"
         )
 
     if force_update:
@@ -219,9 +219,9 @@ CMD_HELP.update(
     {
         "update": f"**Plugin : **`update`\
         \n\n  »  **Perintah :** `{cmd}update`\
-        \n  »  **Kegunaan : **Untuk Melihat Pembaruan Terbaru Ayiin-Userbot.\
+        \n  »  **Kegunaan : **Untuk Melihat Pembaruan Terbaru Lumiere-Userbot.\
         \n\n  »  **Perintah :** `{cmd}update deploy`\
-        \n  »  **Kegunaan : **Untuk MengUpdate Fitur Terbaru Dari Ayiin-Userbot.\
+        \n  »  **Kegunaan : **Untuk MengUpdate Fitur Terbaru Dari Lumiere-Userbot.\
     "
     }
 )
