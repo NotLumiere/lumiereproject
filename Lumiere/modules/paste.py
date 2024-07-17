@@ -7,9 +7,9 @@
 
 import os
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.ayiin.pastebin import PasteBin
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.lumi.pastebin import PasteBin
 
 from . import cmd, var
 
