@@ -10,8 +10,8 @@ import re
 
 import requests
 
-from AyiinXd import Ayiin
-from AyiinXd.ayiin import ayiin_cmd, time_formatter
+from Lumiere import Ayiin
+from Lumiere.lumi import ayiin_cmd, time_formatter
 
 
 def shorten(description, info="anilist.co"):
