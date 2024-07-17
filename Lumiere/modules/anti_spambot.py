@@ -11,12 +11,12 @@ from requests import get
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins, Message
 
-from AyiinXd import CMD_HELP, Ayiin
+from Lumiere import CMD_HELP, Lumi
 
 from . import var
 
 
-@Ayiin.on(ChatAction)
+@Lumi.on(ChatAction)
 async def ANTI_SPAMBOTS(welcm):
     """Ban a recently joined user if it matches the spammer checking algorithm."""
     try:
