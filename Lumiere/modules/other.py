@@ -14,8 +14,8 @@ from telethon.tl.functions.contacts import UnblockRequest
 from telethon.tl.functions.messages import ExportChatInviteRequest
 from telethon.tl.types import ChannelParticipantsKicked
 
-from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP, LOGS
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd
 
