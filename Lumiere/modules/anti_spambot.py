@@ -58,7 +58,7 @@ async def ANTI_SPAMBOTS(welcm):
                 return
 
             for user_id in users:
-                async for message in Ayiin.iter_messages(
+                async for message in Lumi.iter_messages(
                     welcm.chat_id, from_user=user_id
                 ):
 
