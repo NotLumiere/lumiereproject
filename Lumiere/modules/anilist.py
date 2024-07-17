@@ -10,7 +10,7 @@ import re
 
 import requests
 
-from Lumiere import Ayiin
+from Lumiere import Lumi
 from Lumiere.lumi import ayiin_cmd, time_formatter
 
 
@@ -219,7 +219,7 @@ async def anichar(event):
         if image := json.get("image", None):
             image = image.get("large")
             await event.delete()
-            await Ayiin.send_file(
+            await Lumi.send_file(
                 event.chat_id, image, caption=msg, parse_mode="md", reply_to=reply_to_id
             )
         else:
@@ -289,7 +289,7 @@ async def animanga(event):
         )
         if image:
             try:
-                await Ayiin.send_file(
+                await Lumi.send_file(
                     event.chat_id,
                     image,
                     caption=ms_g,
