@@ -15,8 +15,8 @@ from telethon import types
 from telethon.errors import PhotoInvalidDimensionsError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import edit_or_reply, ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import edit_or_reply, ayiin_cmd
 
 from . import cmd
 
