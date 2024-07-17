@@ -110,12 +110,12 @@ async def _(event):
 
 
 @ayiin_cmd(pattern="nah(?: |$)(.*)")
-async def _(ayiin):
-    await ayiin.edit("`\n(\\_/)`"
+async def _(lumi):
+    await lumi.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n />💖 *Ini Buat Kamu`")
     sleep(2)
-    await ayiin.edit("`\n(\\_/)`"
+    await lumi.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💖<\\  *Tapi Bo'ong Hiyahiyahiya`")
 
