@@ -3,9 +3,9 @@
 
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd, get_user_from_event
+from Lumiere import CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import ayiin_cmd, get_user_from_event
 
 from . import DEVS, cmd
 
