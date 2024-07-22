@@ -10,8 +10,8 @@ import re
 
 from telethon.tl import types
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
+from Lumiere import CMD_HELP
+from Lumiere.events import register
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
 nameexp = re.compile(r"\[([\w\S]+)\]\(tg://user\?id=(\d+)\)\[(.+?)\]")
