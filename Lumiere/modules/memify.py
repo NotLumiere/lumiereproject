@@ -9,8 +9,8 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import edit_delete, edit_or_reply, ayiin_cmd, runcmd, take_screen_shot
+from Lumiere import CMD_HELP
+from Lumiere.lumi import edit_delete, edit_or_reply, ayiin_cmd, runcmd, take_screen_shot
 
 from . import cmd, var
 
