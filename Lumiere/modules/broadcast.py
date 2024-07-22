@@ -5,9 +5,9 @@
 
 from asyncio import sleep
 
-from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.ayiin import AyiinChanger, ayiin_cmd, eor, parse_pre
-from AyiinXd.database.broadcast import (
+from Lumiere import CMD_HELP, LOGS
+from Lumiere.lumi import AyiinChanger, ayiin_cmd, eor, parse_pre
+from Lumiere.database.broadcast import (
     add_broadcast,
     cek_is_braodcast,
     del_broadcast,
