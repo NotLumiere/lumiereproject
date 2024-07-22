@@ -7,8 +7,8 @@ from secrets import choice
 
 from telethon.tl.types import InputMessagesFilterVideo, InputMessagesFilterVoice
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, edit_or_reply
 
 from . import cmd, var
 
