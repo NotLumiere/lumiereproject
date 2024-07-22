@@ -8,9 +8,9 @@ from telethon.tl.functions.photos import DeletePhotosRequest, UploadProfilePhoto
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import InputPhoto
 
-from AyiinXd import CMD_HELP, LOGS, STORAGE
-from AyiinXd.ayiin import eor
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP, LOGS, STORAGE
+from Lumiere.lumi import eor
+from Lumiere.lumi import ayiin_cmd
 
 from . import DEVS, cmd
 
@@ -21,12 +21,12 @@ if not hasattr(STORAGE, "userObj"):
 @ayiin_cmd(pattern="clone ?(.*)", allow_sudo=False)
 async def impostor(event):
     inputArgs = event.pattern_match.group(1)
-    AyiinXd = ["@AyiinXd", "@ayiinxd"]
+    AyiinXd = ["@Urfavtoyy", "@urfavtoyy", "@Urfavtoy", "@UrFavToy", "@urfavtoy"]
     if inputArgs in AyiinXd:
-        await eor(event, "**[ᴋᴏɴᴛᴏʟ]** - Tidak dapat menyamar sebagai Developer Ayiin-Userbot Ngentod 😡")
+        await eor(event, "**[ᴋᴏɴᴛᴏʟ]** - Tidak dapat menyamar sebagai Developer Lumiere-Userbot Ngentod 😡")
         await event.client.send_message(
-            "@AyiinChats",
-            "**Maaf Telah MengClone Ayiin 🥺**"
+            "@Lumieresupport",
+            "**Maaf Telah MengClone Lumi 🥺**"
         )
         return
     xx = await eor(event, "`Memproses...`")
@@ -46,7 +46,7 @@ async def impostor(event):
         replyMessage = await event.get_reply_message()
         if replyMessage.sender_id in DEVS:
             return await xx.edit(
-                "**[ᴋᴏɴᴛᴏʟ]** - Tidak dapat menyamar sebagai Developer Ayiin-Userbot Ngentod 😡"
+                "**[ᴋᴏɴᴛᴏʟ]** - Tidak dapat menyamar sebagai Developer Lumiere-Userbot Ngentod 😡"
             )
         if replyMessage.sender_id is None:
             return await xx.edit("**Tidak dapat menyamar sebagai admin anonim 🥺**")
