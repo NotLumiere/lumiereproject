@@ -17,15 +17,15 @@ from telethon.tl import types
 from telethon.tl.types import MessageMediaWebPage
 from telethon.utils import get_display_name, pack_bot_file_id
 
-from AyiinXd import Ayiin, LOGS, StartTime, bot
-from AyiinXd.database.bot_blacklist import check_is_black_list
-from AyiinXd.database.bot_start import (
+from Lumiere import Lumi, LOGS, StartTime, bot
+from Lumiere.database.bot_blacklist import check_is_black_list
+from Lumiere.database.bot_start import (
     add_starter_to_db,
     get_all_starters,
     get_starter_details,
 )
-from AyiinXd.database.variable import get_var
-from AyiinXd.ayiin import _format, asst_cmd, callback, reply_id, set_var_value
+from Lumiere.database.variable import get_var
+from Lumiere.lumi import _format, asst_cmd, callback, reply_id, set_var_value
 
 from . import cmd, var
 from .ping import get_readable_time
@@ -50,7 +50,7 @@ def get_back_button(name):
 
 
 async def check_bot_started_users(user, event):
-    if user.id == (await Ayiin.get_me()).id:
+    if user.id == (await Lumi.get_me()).id:
         return
     check = get_starter_details(user.id)
     if check is None:
@@ -77,16 +77,16 @@ async def check_bot_started_users(user, event):
 
 @callback(data=re.compile(b"pmclose"))
 async def pmclose(event):
-    if event.query.user_id == (await Ayiin.get_me()).id:
+    if event.query.user_id == (await Lumi.get_me()).id:
         await event.delete()
 
 
 @callback(data=re.compile(b"pmbot"))
 async def pmbot(event):
     await event.delete()
-    AyiinUBOT = await bot.get_me()
-    botusername = AyiinUBOT.username
-    if event.query.user_id == (await Ayiin.get_me()).id:
+    LumiUBOT = await bot.get_me()
+    botusername = LumiUBOT.username
+    if event.query.user_id == (await Lumi.get_me()).id:
         await bot.send_message(
             event.chat_id,
             message=f"""**Perintah di Bot ini adalah:**\n
@@ -116,7 +116,7 @@ async def pmbot(event):
 @callback(data=re.compile(b"users"))
 async def users(event):
     await event.delete()
-    if event.query.user_id == (await Ayiin.get_me()).id:
+    if event.query.user_id == (await Lumi.get_me()).id:
         total_users = get_all_starters()
         msg = "Daftar Pengguna Di Bot \n\n"
         for user in total_users:
@@ -127,7 +127,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="AyiinXd/resources/logo.jpg",
+                thumb="Lumiere/resources/logo.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
