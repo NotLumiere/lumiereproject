@@ -1,12 +1,12 @@
 # Copyright by (C) 2020-2023 by TgCatUB@Github.
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import (
+from Lumiere import CMD_HELP
+from Lumiere.lumi import (
     ayiin_cmd,
     eod,
     eor,
 )
-from ..ayiin.aihelp import (
+from ..lumi.aihelp import (
     gen_edited_resp,
     gen_resp
 )
