@@ -15,8 +15,8 @@
 import os
 import sys
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, runcmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, runcmd
 
 from . import cmd
 
