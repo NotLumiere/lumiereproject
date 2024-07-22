@@ -10,8 +10,8 @@ from hachoir.parser import createParser
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, bash, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, bash, eod, eor
 
 from . import cmd
 
