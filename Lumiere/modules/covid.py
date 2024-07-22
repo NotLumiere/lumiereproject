@@ -5,13 +5,13 @@
 
 from covid import Covid
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.events import ayiin_cmd
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.events import ayiin_cmd
 
 from . import cmd
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"covid (.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"covid (.*)"))
 async def corona(event):
     await event.edit("`Memproses...`")
     country = event.pattern_match.group(1)
@@ -33,7 +33,7 @@ async def corona(event):
     await event.edit(f"**Info Virus Corona di {country}:**\n\n{output_text}")
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern="covid$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern="covid$"))
 async def corona(event):
     await event.edit("`Memproses...`")
     country = "World"
