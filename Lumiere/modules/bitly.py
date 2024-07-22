@@ -9,7 +9,7 @@ from re import match
 
 from bitlyshortener import Shortener
 
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere.lumi import ayiin_cmd
 
 from . import var
 
