@@ -14,9 +14,9 @@ import os
 
 from PIL import Image
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eod, eor
-from AyiinXd.ayiin import ayiin_cmd, runcmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import eod, eor
+from Lumiere.lumi import ayiin_cmd, runcmd
 
 from . import cmd
 
