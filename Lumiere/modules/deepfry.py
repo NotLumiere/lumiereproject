@@ -36,9 +36,9 @@ from random import randint, uniform
 
 from PIL import Image, ImageEnhance, ImageOps
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.ayiin import check_media
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.lumi import check_media
 
 from . import cmd
 
