@@ -14,10 +14,10 @@ from secrets import choice
 from telethon.tl import types
 from telethon.utils import get_display_name
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eod, eor
-from AyiinXd.ayiin import ayiin_cmd
-from AyiinXd.ayiin.misc import Carbon
+from Lumiere import CMD_HELP
+from Lumiere.lumi import eod, eor
+from Lumiere.lumi import ayiin_cmd
+from Lumiere.lumi.misc import Carbon
 
 from . import cmd
 
