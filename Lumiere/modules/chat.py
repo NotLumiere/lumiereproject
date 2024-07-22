@@ -38,11 +38,11 @@ from telethon.tl.types import (
 )
 from telethon.utils import get_input_location
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eod, eor
-from AyiinXd.events import register
-from AyiinXd.modules.yinsping import absen
-from AyiinXd.ayiin import ayiin_cmd, get_user_from_event
+from Lumiere import CMD_HELP
+from Lumiere.lumi import eod, eor
+from Lumiere.events import register
+from Lumiere.modules.yinsping import absen
+from Lumiere.lumi import ayiin_cmd, get_user_from_event
 
 from . import cmd
 
