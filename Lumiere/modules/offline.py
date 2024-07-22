@@ -12,9 +12,9 @@ from secrets import choice
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from AyiinXd import AFKREASON
-from AyiinXd.ayiin import AyiinChanger, ayiin_cmd, ayiin_handler
-from AyiinXd.database.permit import is_approved, get_mode_permit
+from Lumiere import AFKREASON
+from Lumiere.lumi import AyiinChanger, ayiin_cmd, ayiin_handler
+from Lumiere.database.permit import is_approved, get_mode_permit
 
 from . import var
 
