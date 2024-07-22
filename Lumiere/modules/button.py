@@ -7,8 +7,8 @@ import re
 
 from telethon import Button
 
-from AyiinXd import CMD_HELP, bot
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, reply_id
+from Lumiere import CMD_HELP, bot
+from Lumiere.lumi import ayiin_cmd, edit_delete, reply_id
 
 from . import cmd
 
@@ -103,11 +103,11 @@ CMD_HELP.update(
         "button": f"**Plugin : **`button`\
         \n\n  »  **Perintah :** `{cmd}cbutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  »  **Kegunaan : **Untuk membuat pesan button\
-        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/AyiinChannel:same> [Support]<buttonurl:https://t.me/AyiinChats>`\
+        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lumiereproject:same> [Support]<buttonurl:https://t.me/Lumieresupport>`\
         \n  •  **NOTE :** Untuk menggunakan ini, anda memerlukan bot anda dan harus ada di grup/channel di mana anda menggunakan\
         \n\n  »  **Perintah :** `{cmd}ibutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  »  **Kegunaan : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/AyiinChannel:same> [Support]<buttonurl:https://t.me/AyiinChats>`\
+        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lumiereproject:same> [Support]<buttonurl:https://t.me/Lumieresupport>`\
     "
     }
 )
