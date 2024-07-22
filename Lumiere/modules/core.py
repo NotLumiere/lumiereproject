@@ -5,9 +5,9 @@
 import os
 from pathlib import Path
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import eor
-from AyiinXd.ayiin import ayiin_cmd, load_module, remove_plugin, reply_id
+from Lumiere import CMD_HELP
+from Lumiere.lumi import eor
+from Lumiere.lumi import ayiin_cmd, load_module, remove_plugin, reply_id
 
 from . import cmd
 
