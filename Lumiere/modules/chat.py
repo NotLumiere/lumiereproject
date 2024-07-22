@@ -41,7 +41,7 @@ from telethon.utils import get_input_location
 from Lumiere import CMD_HELP
 from Lumiere.lumi import eod, eor
 from Lumiere.events import register
-from Lumiere.modules.yinsping import absen
+from Lumiere.modules.devping import absen
 from Lumiere.lumi import ayiin_cmd, get_user_from_event
 
 from . import cmd
