@@ -8,10 +8,10 @@
 from asyncio import sleep
 from traceback import format_exc
 
-from AyiinXd import CMD_HELP, LOGS
-from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd
-from AyiinXd.database.notes import add_note, get_note, get_notes, rm_note, update_note
+from Lumiere import CMD_HELP, LOGS
+from Lumiere.events import register
+from Lumiere.lumi import ayiin_cmd
+from Lumiere.database.notes import add_note, get_note, get_notes, rm_note, update_note
 
 from . import cmd, var
 
