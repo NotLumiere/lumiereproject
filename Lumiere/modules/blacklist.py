@@ -9,9 +9,9 @@
 import io
 import re
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, ayiin_handler, eor
-from AyiinXd.database.blacklist_filter import (
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, ayiin_handler, eor
+from Lumiere.database.blacklist_filter import (
     add_to_blacklist,
     get_chat_blacklist,
     rm_from_blacklist,
