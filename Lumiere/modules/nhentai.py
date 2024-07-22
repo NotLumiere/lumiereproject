@@ -9,14 +9,14 @@ import re
 from hentai import Hentai, Utils
 from natsort import natsorted
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.events import ayiin_cmd
-from AyiinXd.ayiin import post_to_telegraph
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.events import ayiin_cmd
+from Lumiere.lumi import post_to_telegraph
 
 from . import cmd
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"nhentai(?: |$)(.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"nhentai(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
