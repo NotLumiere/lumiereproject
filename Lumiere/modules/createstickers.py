@@ -12,7 +12,7 @@ from secrets import choice
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere.lumi import ayiin_cmd
 
 
 @ayiin_cmd(pattern=r"cs(?: |$)(.*)")
