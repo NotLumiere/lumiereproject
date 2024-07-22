@@ -7,8 +7,8 @@
 
 from telethon.tl import functions
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eor
 
 from . import cmd
 
@@ -27,8 +27,7 @@ async def _(grop):
             result = await grop.client(
                 functions.messages.CreateChatRequest(
                     users=["@MissRose_bot"],
-                    # Not enough users (to create a chat, for example)
-                    # Telegram, no longer allows creating a chat with
+                    # Not enough users (to create a chat, for exampl                    # Telegram, no longer allows creating a chat with
                     # ourselves
                     title=group_name,
                 )
