@@ -23,8 +23,8 @@ from bs4 import BeautifulSoup
 from heroku3 import from_key
 from PIL import Image
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eor, time_formatter
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eor, time_formatter
 
 from . import cmd, var
 
