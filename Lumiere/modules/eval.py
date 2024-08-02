@@ -15,10 +15,10 @@ from pprint import pprint
 from sqlite3 import IntegrityError, OperationalError
 
 from config import var
-from AyiinXd import Ayiin, CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
-from AyiinXd.database.core import db
-from AyiinXd.events import register
+from Lumiere import Lumi, CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
+from Lumiere.database.core import db
+from Lumiere.events import register
 
 
 conn = db.get_conn()
@@ -32,7 +32,7 @@ async def _(event):
     expression = event.pattern_match.group(1)
     if not expression:
         return await eor(event, "**Berikan Code untuk di eksekusi.**")
-    if expression in ("AyiinXd.session", "config.env"):
+    if expression in ("Lumiere.session", "config.env"):
         return await eor(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     cmd = "".join(event.message.message.split(maxsplit=1)[1:])
     if not cmd:
@@ -102,7 +102,7 @@ async def _(event):
                 event.chat_id,
                 out_file,
                 force_document=True,
-                thumb="AyiinXd/resources/logo.jpg",
+                thumb="Lumiere/resources/logo.jpg",
                 allow_cache=False,
                 caption=f"`{cmd}`" if len(cmd) < 998 else None,
                 reply_to=reply_to_id,
@@ -117,7 +117,7 @@ async def run(event):
     code = event.pattern_match.group(1)
     if not code:
         return await eor(event, f"**Silahkan Ketik** `{cmd}help exec` **sebagai contoh.**")
-    if code in ("AyiinXd.session", "config.env"):
+    if code in ("Lumiere.session", "config.env"):
         return await eor(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     await eor(event, '**Memproses...**')
     if len(code.splitlines()) <= 5:
@@ -155,7 +155,7 @@ async def run(event):
             event.chat_id,
             "output.txt",
             reply_to=event.id,
-            thumb="AyiinXd/resources/logo.jpg",
+            thumb="Lumiere/resources/logo.jpg",
             caption="**Output terlalu besar, dikirim sebagai file**",
         )
         return remove("output.txt")
@@ -170,7 +170,7 @@ async def terminal_runner(event):
     command = event.pattern_match.group(1)
     if not command:
         return await eod(event, f"`Berikan perintah atau gunakan {cmd}help term sebagai contoh.`")
-    if command in ("AyiinXd.session", "config.env"):
+    if command in ("Lumiere.session", "config.env"):
         return await eod(event, "**Itu operasi yang berbahaya! Tidak diperbolehkan!**")
     await eor(event, '**Memproses...**')
     process = await asyncio.create_subprocess_shell(
@@ -190,7 +190,7 @@ async def terminal_runner(event):
             event.chat_id,
             "output.txt",
             reply_to=event.id,
-            thumb="AyiinXd/resources/logo.jpg",
+            thumb="Lumiere/resources/logo.jpg",
             caption="**Output terlalu besar, dikirim sebagai file**",
         )
         return remove("output.txt")
@@ -217,11 +217,11 @@ async def _(event):
     if len(the_real_message) > 4096:
         with io.BytesIO(str.encode(the_real_message)) as out_file:
             out_file.name = "json.text"
-            await Ayiin.send_file(
+            await Lumi.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,
-                thumb="AyiinXd/resources/logo.jpg",
+                thumb="Lumiere/resources/logo.jpg",
                 allow_cache=False,
                 reply_to=reply_to_id,
             )
@@ -253,7 +253,7 @@ async def execsql(event):
             bio = io.BytesIO()
             bio.name = "output.txt"
             bio.write(res.encode())
-            await Ayiin.send_file(
+            await Lumi.send_file(
                 event.chat_id,
                 bio,
             )
