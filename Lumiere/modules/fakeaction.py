@@ -12,8 +12,8 @@ import asyncio
 import math
 import time
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, extract_time
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, extract_time
 
 from . import cmd
 
