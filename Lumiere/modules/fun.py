@@ -9,8 +9,8 @@ import time
 import cv2
 import PIL
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, bash, eod, eor, progress
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, bash, eod, eor, progress
 
 from . import cmd
 
