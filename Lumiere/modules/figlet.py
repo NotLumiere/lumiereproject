@@ -10,8 +10,8 @@
 
 import pyfiglet
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, deEmojify, eod
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, deEmojify, eod
 
 from . import cmd
 
