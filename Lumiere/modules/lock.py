@@ -7,9 +7,9 @@
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.types import ChatBannedRights
 
-from AyiinXd import CMD_HELP
-from AyiinXd.events import register
-from AyiinXd.ayiin import ayiin_cmd, eor
+from Lumiere import CMD_HELP
+from Lumiere.events import register
+from Lumiere.lumi import ayiin_cmd, eor
 
 from . import cmd
 
