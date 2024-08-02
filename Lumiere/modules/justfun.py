@@ -2,8 +2,8 @@
 # Ported For Lord-Userbot By liualvinas/Alvin
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini!!!
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd
 
 from . import cmd
 
