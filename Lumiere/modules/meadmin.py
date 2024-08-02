@@ -5,8 +5,8 @@
 import asyncio
 import os
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.lumi import ayiin_cmd, edit_or_reply
 
 from . import cmd
 
@@ -19,10 +19,10 @@ async def _(event):
     args = event.pattern_match.group(1)
     xnxx = await edit_or_reply(event, "**Memproses...**")
     admin_list = []
-    dialogue = await Ayiin.get_dialogs()
+    dialogue = await Lumi.get_dialogs()
     for dialog in dialogue:
         if dialog.is_group or dialog.is_channel:
-            ids = await Ayiin.get_entity(dialog)
+            ids = await Lumi.get_entity(dialog)
             try:
                 if ids.admin_rights or ids.creator:
                     info = f"{ids.id}:  {ids.title}"
@@ -40,10 +40,10 @@ async def _(event):
         await asyncio.sleep(1)
         caption = f'reply pesan ini dengan ketik {cmd}carbon untuk melihat list Admin anda, [total: {len(admin_list)}]'
         if args and "pv" in args:
-            await Ayiin.send_file("me", "list_admin.txt", caption=caption)
+            await Lumi.send_file("me", "list_admin.txt", caption=caption)
             await xnxx.respond("`File terkirim ke Pesan Tersimpan mu`")
         else:
-            await Ayiin.send_file(here, "list_admin.txt", caption=caption)
+            await Lumi.send_file(here, "list_admin.txt", caption=caption)
         os.remove("list_admin.txt")
         await xnxx.delete()
     else:
