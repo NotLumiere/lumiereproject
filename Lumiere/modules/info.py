@@ -14,8 +14,8 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd
 
 from . import cmd, var
 
