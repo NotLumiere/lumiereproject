@@ -9,8 +9,8 @@ import aiohttp
 import requests
 from pySmartDL import SmartDL
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply, reply_id
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, edit_delete, edit_or_reply, reply_id
 
 from . import cmd
 
