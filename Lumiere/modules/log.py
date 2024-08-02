@@ -7,11 +7,11 @@ import asyncio
 from telethon import events
 from telethon.tl.custom import Message
 
-from AyiinXd import CMD_HELP, LOGS, Ayiin
-from AyiinXd.ayiin import _format, ayiin_cmd, edit_delete, edit_or_reply
-from AyiinXd.ayiin.tools import media_type
-from AyiinXd.database.log import approve_log, disapprove_log, is_approved_log
-from AyiinXd.database.variable import get_var, set_var
+from Lumiere import CMD_HELP, LOGS, Lumi
+from Lumiere.lumi import _format, ayiin_cmd, edit_delete, edit_or_reply
+from Lumiere.lumi.tools import media_type
+from Lumiere.database.log import approve_log, disapprove_log, is_approved_log
+from Lumiere.database.variable import get_var, set_var
 
 from . import cmd, var
 from .carbon import vcmention
@@ -27,7 +27,7 @@ class LOG_CHATS:
 LOG_CHATS_ = LOG_CHATS()
 
 
-@Ayiin.on(events.ChatAction)
+@Lumi.on(events.ChatAction)
 async def logaddjoin(yins):
     user = await yins.get_user()
     chat = await yins.get_chat()
@@ -47,8 +47,8 @@ async def logaddjoin(yins):
     await yins.client.send_message(var.BOTLOG_CHATID, text)
 
 
-@Ayiin.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
-@Ayiin.on(events.MessageEdited(incoming=True, func=lambda e: e.is_private))
+@Lumi.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
+@Lumi.on(events.MessageEdited(incoming=True, func=lambda e: e.is_private))
 async def monito_p_m_s(yins: Message):
     if var.BOTLOG_CHATID == -100:
         return
@@ -83,8 +83,8 @@ async def monito_p_m_s(yins: Message):
                 LOGS.warn(str(e))
 
 
-@Ayiin.on(events.NewMessage(incoming=True, func=lambda e: e.mentioned))
-@Ayiin.on(events.MessageEdited(incoming=True, func=lambda e: e.mentioned))
+@Lumi.on(events.NewMessage(incoming=True, func=lambda e: e.mentioned))
+@Lumi.on(events.MessageEdited(incoming=True, func=lambda e: e.mentioned))
 async def log_tagged_messages(event: Message):
     if var.BOTLOG_CHATID == -100:
         return
