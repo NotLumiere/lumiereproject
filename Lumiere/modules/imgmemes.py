@@ -10,8 +10,8 @@ from telegraph import exceptions, upload_file
 from validators.url import url
 from wget import download
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.ayiin import ayiin_cmd, bash, deEmojify
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.lumi import ayiin_cmd, bash, deEmojify
 
 from . import cmd, var
 
@@ -303,7 +303,7 @@ async def ngethreat(event):
     else:
         await event.edit("reply to a supported media file")
         return
-    download_location = await Ayiin.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
+    download_location = await Lumi.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -329,7 +329,7 @@ async def ngethreat(event):
     file = f"https://telegra.ph{response[0]}"
     file = await threats(file)
     await event.delete()
-    await Ayiin.send_file(event.chat_id, file, reply_to=replied)
+    await Lumi.send_file(event.chat_id, file, reply_to=replied)
 
 
 @ayiin_cmd(pattern="trash(?: |$)(.*)")
@@ -345,7 +345,7 @@ async def ngetrash(event):
     else:
         await event.edit("reply to a supported media file")
         return
-    download_location = await Ayiin.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
+    download_location = await Lumi.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -371,7 +371,7 @@ async def ngetrash(event):
     file = f"https://telegra.ph{response[0]}"
     file = await trash(file)
     await event.delete()
-    await Ayiin.send_file(event.chat_id, file, reply_to=replied)
+    await Lumi.send_file(event.chat_id, file, reply_to=replied)
 
 
 @ayiin_cmd(pattern="trap(?: |$)(.*)")
@@ -396,7 +396,7 @@ async def ngetrap(e):
     else:
         await e.edit("reply to a supported media file")
         return
-    download_location = await Ayiin.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
+    download_location = await Lumi.download_media(replied, var.TEMP_DOWNLOAD_DIRECTORY)
     if download_location.endswith((".webp")):
         download_location = convert_toimage(download_location)
     size = os.stat(download_location).st_size
@@ -420,7 +420,7 @@ async def ngetrap(e):
     file = f"https://telegra.ph{response[0]}"
     file = await trap(text1, text2, file)
     await e.delete()
-    await Ayiin.send_file(e.chat_id, file, reply_to=replied)
+    await Lumi.send_file(e.chat_id, file, reply_to=replied)
 
 
 # Ported by @AshSTR
@@ -448,9 +448,9 @@ async def FakeGoogleSearch(event):
     blue = (0, 0, 255)
     black = (0, 0, 0)
     font1 = ImageFont.truetype(
-        "AyiinXd/ayiin/styles/ProductSans-BoldItalic.ttf", 20)
+        "Lumiere/lumi/styles/ProductSans-BoldItalic.ttf", 20)
     font2 = ImageFont.truetype(
-        "AyiinXd/ayiin/styles/ProductSans-Light.ttf", 23)
+        "Lumiere/lumi/styles/ProductSans-Light.ttf", 23)
     drawing.text((450, 258), result, fill=blue, font=font1)
     drawing.text((270, 37), search, fill=black, font=font2)
     photo.save("downloads/test.jpg")
@@ -477,7 +477,7 @@ async def phcomment(event):
                 name = user.first_name
             text = text or str(reply.message)
         elif text:
-            user = await Ayiin.get_me()
+            user = await Lumi.get_me()
             if user.last_name:
                 name = f"{user.first_name} {user.last_name}"
             else:
