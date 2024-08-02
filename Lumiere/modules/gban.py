@@ -11,10 +11,10 @@ from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import Channel
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, chataction, edit_or_reply, get_user_from_event
-from AyiinXd.database.gban import add_gbanned, del_gbanned, cek_gbanned, get_gbanned
-from AyiinXd.events import register
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, chataction, edit_or_reply, get_user_from_event
+from Lumiere.database.gban import add_gbanned, del_gbanned, cek_gbanned, get_gbanned
+from Lumiere.events import register
 
 from . import DEVS, cmd, var
 from .admin import BANNED_RIGHTS, UNBAN_RIGHTS
