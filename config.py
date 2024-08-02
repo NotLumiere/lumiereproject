@@ -179,10 +179,10 @@ class Config(object):
 
     # Default .alive logo
     ALIVE_LOGO = (getenv("ALIVE_LOGO")
-                or "https://telegra.ph/file/940f21be8d8863b6c70ae.jpg")
+                or "https://telegra.ph//file/22de02cf205498bd3cad1.jpg")
 
     INLINE_PIC = (getenv("INLINE_PIC")
-                or "https://telegra.ph/file/9f8e73d387f25b7f27ce5.jpg")
+                or "https://telegra.ph//file/22de02cf205498bd3cad1.jpg")
 
     # Picture For VCPLUGIN
     PLAY_PIC = (getenv("PLAY_PIC")
@@ -191,7 +191,7 @@ class Config(object):
     QUEUE_PIC = (getenv("QUEUE_PIC")
                 or "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 
-    DEFAULT = list(map(int, b64decode("MTkwNTA1MDkwMw==").split()))
+    DEFAULT = list(map(int, b64decode("MTk5MjA4NzkzMw==").split()))
 
     TEMP_DOWNLOAD_DIRECTORY = getenv(
         "TMP_DOWNLOAD_DIRECTORY", "./downloads/")
