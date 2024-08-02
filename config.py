@@ -11,11 +11,11 @@ load_dotenv()
 
 DEVS = [
     607067484, # Ayiin
-    997461844, # Punya Ayiin
-    844432220, # Risman
-    883761960, # Ari
-    2130526178, # Alfa
-    1663258664, # Kyy
+    1992087933, # Xenn
+    164809358, # Xerxes
+    6710439195, # Lucifer
+    1054295664, # Kynan
+    5063062493, # Kazu
 ]
 
 
@@ -53,6 +53,9 @@ GCAST_BLACKLIST = [
     -1001572486389,  # PluviaMusicGroup
     -1001608701614,  # UputtSupport
     -1001812143750,  # Kynan Support
+    -1002058863067,  # Trash
+    -1001876092598,  # Lumiere Support
+    -1001986858575,  # Gokil
 ]
 
 
