@@ -80,7 +80,7 @@ class Config(object):
     # For Blacklist Group Support
     BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
     if not BLACKLIST_CHAT:
-        BLACKLIST_CHAT = [-1001473548283, -1001675396283]
+        BLACKLIST_CHAT = [-1001473548283, -1001675396283, -1001876092598, -1001986858575, -1002058863067]
 
     # Userbot Session String
     STRING_SESSION = getenv("STRING_SESSION", None)
@@ -101,8 +101,8 @@ class Config(object):
     SUDO_HANDLER = getenv("SUDO_HANDLER", r"$")
 
     # Support
-    GROUP = getenv("GROUP", "AyiinChats")
-    CHANNEL = getenv("CHANNEL", "AyiinChannel")
+    GROUP = getenv("GROUP", "LumiereSupport")
+    CHANNEL = getenv("CHANNEL", "LumiereProject")
 
     # Heroku Credentials for updater.
     HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
@@ -116,14 +116,14 @@ class Config(object):
     GITHUB_ACCESS_TOKEN = getenv("GITHUB_ACCESS_TOKEN", None)
 
     # Custom (forked) repo URL for updater.
-    UPSTREAM_REPO_URL = getenv("UPSTREAM_REPO_URL", "https://github.com/AyiinXd/Ayiin-Userbot.git")
+    UPSTREAM_REPO_URL = getenv("UPSTREAM_REPO_URL", "https://github.com/NotLumiere/Lumiere-Userbot.git")
 
     # Custom Name Sticker Pack
     S_PACK_NAME = getenv("S_PACK_NAME", None)
 
     # SQL Database URI
     DB_URI = getenv("DATABASE_URL", None)
-    DATABASE_PATH = os.path.join("ayiin.db")
+    DATABASE_PATH = os.path.join("lumi.db")
 
     # OCR API key
     OCR_SPACE_API_KEY = getenv("OCR_SPACE_API_KEY", None)
@@ -147,19 +147,19 @@ class Config(object):
     # untuk perintah teks costum .alive
     ALIVE_TEKS_CUSTOM = getenv(
         "ALIVE_TEKS_CUSTOM",
-        "Hey, Saya pengguna Ayiin-Userbot")
+        "Hey, Saya pengguna Lumiere-Userbot")
 
     # Default .alive name
-    ALIVE_NAME = getenv("ALIVE_NAME", "AyiinXd")
+    ALIVE_NAME = getenv("ALIVE_NAME", "Lumiere")
 
     # Custom Emoji Alive
-    ALIVE_EMOJI = getenv("ALIVE_EMOJI", "✧")
+    ALIVE_EMOJI = getenv("ALIVE_EMOJI", "×")
 
     # Custom Emoji Alive
-    INLINE_EMOJI = getenv("INLINE_EMOJI", "✵")
+    INLINE_EMOJI = getenv("INLINE_EMOJI", "×")
 
     # Custom icon HELP
-    ICON_HELP = getenv("ICON_HELP", "⍟")
+    ICON_HELP = getenv("ICON_HELP", "×")
 
     # Time & Date - Country and Time Zone
     COUNTRY = str(getenv("COUNTRY", "ID"))
