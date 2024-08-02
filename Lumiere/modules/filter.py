@@ -8,9 +8,9 @@
 from asyncio import sleep
 from re import IGNORECASE, escape, search
 
-from AyiinXd import CMD_HELP, Ayiin
-from AyiinXd.database.filters import add_filter, del_filter, get_all_filters, update_filter
-from AyiinXd.events import ayiin_cmd, register
+from Lumiere import CMD_HELP, Lumi
+from Lumiere.database.filters import add_filter, del_filter, get_all_filters, update_filter
+from Lumiere.events import ayiin_cmd, register
 
 from . import cmd, var
 
@@ -48,7 +48,7 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"filter (.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"filter (.*)"))
 async def add_new_filter(new_handler):
     """For .filter command, allows adding new filters in a chat"""
     if new_handler.chat_id in var.BLACKLIST_CHAT:
@@ -93,7 +93,7 @@ async def add_new_filter(new_handler):
         await new_handler.edit(f"**Berhasil Memperbarui Filter** `{keyword}` **Disini**")
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"stop (.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"stop (.*)"))
 async def remove_a_filter(r_handler):
     """For .stop command, allows you to remove a filter from a chat."""
     filt = r_handler.pattern_match.group(1)
@@ -107,7 +107,7 @@ async def remove_a_filter(r_handler):
         )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"delfilterbot (.*)"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"delfilterbot (.*)"))
 async def kick_marie_filter(event):
     """ For .bersihkanbotfilter command, allows you to kick all \
         Marie(or her clones) filters from a chat. """
@@ -133,7 +133,7 @@ async def kick_marie_filter(event):
         )
 
 
-@Ayiin.on(ayiin_cmd(outgoing=True, pattern=r"filters$"))
+@Lumi.on(ayiin_cmd(outgoing=True, pattern=r"filters$"))
 async def filters_active(event):
     """For .filters command, lists all of the active filters in a chat."""
     transact = "**✮ Daftar Filter Yang Aktif Disini:**\n"
