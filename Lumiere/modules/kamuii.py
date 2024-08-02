@@ -9,8 +9,8 @@ import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eod, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eod, eor
 
 from . import cmd, var
 
