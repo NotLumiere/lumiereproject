@@ -15,8 +15,8 @@ from zipfile import ZIP_DEFLATED, BadZipFile, ZipFile, is_zipfile
 from natsort import os_sorted
 from rarfile import BadRarFile, RarFile, is_rarfile
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import humanbytes, ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import humanbytes, ayiin_cmd
 
 from . import cmd, var
 
