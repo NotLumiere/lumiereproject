@@ -2,8 +2,8 @@
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eor
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eor
 
 from . import cmd
 
