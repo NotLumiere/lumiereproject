@@ -4,8 +4,8 @@ from secrets import choice
 import random
 import requests
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, edit_delete, edit_or_reply
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, edit_delete, edit_or_reply
 
 from . import cmd
 
