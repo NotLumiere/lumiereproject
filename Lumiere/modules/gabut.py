@@ -1,7 +1,7 @@
 from time import sleep
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, edit_or_reply
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, edit_or_reply
 
 from . import cmd
 
