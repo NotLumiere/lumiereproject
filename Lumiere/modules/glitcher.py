@@ -13,8 +13,8 @@ from glitch_this import ImageGlitcher
 from PIL import Image
 from telethon import functions, types
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, check_media, eod, eor, progress
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, check_media, eod, eor, progress
 
 from . import var
 
