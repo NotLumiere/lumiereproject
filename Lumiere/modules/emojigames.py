@@ -5,8 +5,8 @@
 
 from telethon.tl.types import InputMediaDice
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd
 
 from . import cmd
 
