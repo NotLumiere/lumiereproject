@@ -14,9 +14,9 @@ import asyncio
 
 from telethon.errors import FloodWaitError
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import AyiinChanger, ayiin_cmd, eod, eor
-from AyiinXd.database.bl_gcast import add_gcast, cek_gcast, del_gcast
+from Lumiere import CMD_HELP
+from Lumiere.lumi import AyiinChanger, ayiin_cmd, eod, eor
+from Lumiere.database.bl_gcast import add_gcast, cek_gcast, del_gcast
 
 from . import (
     DEVS,
