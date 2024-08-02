@@ -1,8 +1,8 @@
 """ Userbot module for other small commands. """
 
-from AyiinXd import CMD_HELP
-from AyiinXd.ayiin import ayiin_cmd, eor
-from AyiinXd.database.variable import cek_var
+from Lumiere import CMD_HELP
+from Lumiere.lumi import ayiin_cmd, eor
+from Lumiere.database.variable import cek_var
 
 from . import cmd
 
@@ -14,10 +14,10 @@ async def usit(event):
         event,
         f"""
 **Hai {me.first_name} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `{cmd}help` Atau Bisa Minta Bantuan Ke:
-⍟ **Group Support :** [𝙰𝚈𝙸𝙸𝙽 𝚂𝚄𝙿𝙿𝙾𝚁𝚃](t.me/AyiinChats)
-⍟ **Channel Ayiin :** [𝙰𝚈𝙸𝙸𝙽 𝚂𝚄𝙿𝙿𝙾𝚁𝚃](t.me/AyiinSupport)
-⍟ **Owner Repo :** [𝚈𝙸𝙽𝚂](t.me/AyiinXd)
-⍟ **Repo :** [𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃](https://github.com/AyiinXd/Ayiin-Userbot)
+⍟ **Group Support :** [Lumiere Support](t.me/LumiereSupport)
+⍟ **Channel Support :** [Lumiere Project](t.me/LumiereProject)
+⍟ **Owner Repo :** [Lumiere](t.me/Urfavtoyy)
+⍟ **Repo :** [Lumiere-Userbot](https://github.com/NotLumiere/Lumiere-Userbot)
 """
     )
 
