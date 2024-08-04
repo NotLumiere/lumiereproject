@@ -10,7 +10,7 @@
 import sys
 
 from config import GCAST_BLACKLIST, DEVS, GCAST_BLACKLIST, var
-from AyiinXd import LOGS
+from Lumiere import LOGS
 
 
 def __list_all_modules():
