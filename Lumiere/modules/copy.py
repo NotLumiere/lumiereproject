@@ -11,7 +11,7 @@ from Lumiere import CMD_HELP
 from Lumiere.lumi import ayiin_cmd, eod, eor
 from Lumiere.lumi.pastebin import PasteBin
 
-from telethon.errors.rpcerrorlist import ChatForwardsRestrictedError, MediaEmptyError
+from telethon.errors.rpcerrorlist import MediaEmptyError
 
 from . import cmd, var
 
@@ -101,8 +101,6 @@ async def get_restriced_msg(event):
         await event.client.send_message(event.chat_id, message)
         await xx.try_delete()
         return
-    except ChatForwardsRestrictedError:
-        pass
     except MediaEmptyError:
         pass
     if message.media and message.document:
