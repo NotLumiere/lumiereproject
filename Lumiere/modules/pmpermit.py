@@ -27,7 +27,7 @@ from Lumiere.database.permit import (
 )
 from Lumiere.database.variable import del_var, get_var, set_var
 from Lumiere.events import ayiin_cmd
-from Lumiere.ayiin import AyiinChanger, eod, eor
+from Lumiere.lumi import AyiinChanger, eod, eor
 
 from . import DEVS, cmd, var
 
