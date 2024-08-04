@@ -46,8 +46,8 @@ async def autopilot():
     try:
         r = await Lumi(
             CreateChannelRequest(
-                title="Lumiere-Userbot Logs",
-                about="» Group log Created by: Lumiere-Userbot\n\n» Support : @QwertyStore\n» Support: @LumiereProject",
+                title="Lᴜᴍɪᴇʀᴇ-Usᴇʀʙᴏᴛ Lᴏɢs",
+                about="» Group log Created by: Lᴜᴍɪᴇʀᴇ-Usᴇʀʙᴏᴛ\n\n» Support : @QwertyStore\n» Support: @LumiereProject",
                 megagroup=True,
             ),
         )
@@ -65,7 +65,7 @@ async def autopilot():
     channel = get_peer_id(chat)
     if isinstance(chat.photo, ChatPhotoEmpty):
         photo = await download_file(
-            "https://telegra.ph/file/b88d710cee9a6d6783abc.jpg", "photoyins.jpg"
+            "https://telegra.ph/file/aa1dc8d661b38896659b4.jpg", "photoyins.jpg"
         )
         ll = await Lumi.upload_file(photo)
         try:
@@ -125,8 +125,8 @@ async def autobot():
                 sys.exit(1)
         filogo = random.choice(
             [
-                "https://telegra.ph/file/2127175807fe36f6a40f1.jpg",
-                "AyiinXd/resources/logo.jpg",
+                "https://telegra.ph/ʟᴜᴄɪꜰᴇʀ-ᴋᴘꜱɪ-s-Media-08-04",
+                "Lumiere/resources/assbot.jpg",
             ]
         )
         await Lumi.send_message(bf, username)
