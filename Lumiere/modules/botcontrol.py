@@ -7,6 +7,7 @@
 import io
 import re
 import time
+import sys
 from datetime import datetime
 from os import remove, environ, execle
 
