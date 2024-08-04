@@ -48,7 +48,7 @@ async def on_plug_in_callback_query_handler(event):
         buttons = paginate_help(0, dugmeler, "helpme")
         text = f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
         await event.edit(
-                text,
+                text=f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
                 file=logoyins,
                 buttons=buttons,
                 link_preview=False,
