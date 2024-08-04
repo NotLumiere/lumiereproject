@@ -2,24 +2,17 @@
 # Copyright (C) 2022-2023 @AyiinXd
 #
 # This file is a part of < https://github.com/AyiinXd/Ayiin-Userbot >
-# PLease read the GNU Affero General Public License in
+# Please read the GNU Affero General Public License in
 # <https://www.github.com/AyiinXd/Ayiin-Userbot/blob/main/LICENSE/>.
 #
 # FROM Ayiin-Userbot <https://github.com/AyiinXd/Ayiin-Userbot>
 # t.me/AyiinChats & t.me/AyiinChannel
 
-
-# ========================×========================
-#            Jangan Hapus Credit Ngentod
-# ========================×========================
-
 import logging
 import sqlite3
-
 from config import var
 
 logger = logging.getLogger(__name__)
-
 
 execute_xd = """
 CREATE TABLE IF NOT EXISTS blacklist_gcast(
@@ -106,7 +99,6 @@ CREATE TABLE IF NOT EXISTS variable(
 );
 """
 
-
 class DatabaseXd:
     def __init__(self):
         self.conn: sqlite3.Connection = None
@@ -115,44 +107,31 @@ class DatabaseXd:
 
     def connect(self):
         """
-        KANG COPAS GAUSAH MAIN HAPUS KONTOL
-        Copyright (C) 2023-present AyiinXd <https://github.com/AyiinXd>
+        Establishes a connection to the SQLite database and creates necessary tables.
         """
-        conn = sqlite3.connect(self.path)
-
-        conn.executescript(execute_xd)
-
-        conn.execute("VACUUM")
-
-        conn.commit()
-
-        conn.row_factory = sqlite3.Row
-
-        self.conn = conn
-        self.is_connected: bool = True
-
+        self.conn = sqlite3.connect(self.path)
+        self.conn.executescript(execute_xd)
+        self.conn.execute("VACUUM")
+        self.conn.commit()
+        self.conn.row_factory = sqlite3.Row
+        self.is_connected = True
         logger.info("Database Anda Telah Terhubung.")
 
     def close(self):
         """
-        KANG COPAS GAUSAH MAIN HAPUS KREDIT KONTOL
-        Copyright (C) 2023-present AyiinXd <https://github.com/AyiinXd>
+        Closes the connection to the SQLite database.
         """
-        self.conn.close()
-
-        self.is_connected: bool = False
-
+        if self.conn:
+            self.conn.close()
+        self.is_connected = False
         logger.info("Database Anda Telah Ditutup.")
 
     def get_conn(self) -> sqlite3.Connection:
         """
-        KANG COPAS GAUSAH MAIN HAPUS KONTOL
-        Copyright (C) 2023-present AyiinXd <https://github.com/AyiinXd>
+        Returns the active database connection, connecting if not already connected.
         """
         if not self.is_connected:
             self.connect()
-
         return self.conn
-
 
 db = DatabaseXd()
