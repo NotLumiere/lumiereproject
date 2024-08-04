@@ -291,7 +291,7 @@ async def on_plug_in_callback_query_handler(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     cmd = var.CMD_HANDLER
@@ -334,7 +334,7 @@ async def on_plug_in_callback_query_handler(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     cmd = var.CMD_HANDLER
@@ -371,7 +371,7 @@ async def close(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
@@ -386,7 +386,7 @@ async def on_plug_in_callback_query_handler(event):
 
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     cmd = var.CMD_HANDLER
