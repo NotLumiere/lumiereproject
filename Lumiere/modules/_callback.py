@@ -1,3 +1,4 @@
+
 import random
 import re
 
@@ -55,7 +56,7 @@ async def on_plug_in_callback_query_handler(event):
                         f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n"
                         f"× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n"
                         f"× **ᴏᴡɴᴇʀ :** {owner}\n"
-                        f"× **ᴊᴜᴍʟᴀʜ :** 161 **Modules**"
+                        f"× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
                 ),
                 buttons=buttons,
         )
