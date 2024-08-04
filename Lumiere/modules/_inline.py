@@ -7,7 +7,7 @@ from telethon.tl.types import InputWebDocument
 
 from config import var
 from Lumiere import Lumi, CMD_HELP, bot, ibuild_keyboard, paginate_help
-from Lumiere.Lumi import HOSTED_ON
+from Lumiere.lumi import HOSTED_ON
 
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
@@ -24,10 +24,10 @@ main_help_button = [
 ]
 logoyins = random.choice(
     [
-        "https://telegra.ph/file/9f8e73d387f25b7f27ce5.jpg",
-        "https://telegra.ph/file/c935d34b48e45fba22b03.jpg",
-        "https://telegra.ph/file/392f69c8717c91b1e8a3b.jpg",
-        "https://telegra.ph/file/4c5b756dd13d7a88c866b.jpg",
+        "https://telegra.ph//file/ebdc09e59b024b3e2e954.jpg",
+        "https://telegra.ph//file/51d81ee411cb2f4ef11a4.jpg",
+        "https://telegra.ph//file/3a7388a7149bca0395a71.jpg",
+        "https://telegra.ph//file/22de02cf205498bd3cad1.jpg",
     ]
 )
 
@@ -46,28 +46,28 @@ async def inline_handler(event):
         result = await event.builder.photo(
             file=logoyins,
             link_preview=False,
-            text=f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(CMD_HELP)} **Modules**",
+            text=f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(CMD_HELP)} **Modules**",
             buttons=main_help_button,
         )
     elif query.startswith("repo"):
         result = builder.article(
             title="Repository",
-            description="Repository Ayiin - Userbot",
-            url="https://t.me/AyiinChats",
+            description="Repository Lumiere - Userbot",
+            url="https://t.me/Lumieresupport",
             thumb=InputWebDocument(
                 var.INLINE_PIC,
                 0,
                 "image/jpeg",
                 []),
-            text="**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [AyiinXd](https://t.me/AyiinXd)\n✧ **sᴜᴘᴘᴏʀᴛ :** @AyiinChats\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+            text="**Lumiere-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧  **ʀᴇᴘᴏ :** [Lumiere](https://t.me/Urfavtoyy)\n✧ **sᴜᴘᴘᴏʀᴛ :** @Lumieresupport\n✧ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Lumiere-Userbot](https://github.com/NotLumiere/Lumiere-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
             buttons=[
                 [
                     custom.Button.url(
                         "ɢʀᴏᴜᴘ",
-                        "https://t.me/AyiinChats"),
+                        "https://t.me/LumiereSupport"),
                     custom.Button.url(
                         "ʀᴇᴘᴏ",
-                        "https://github.com/AyiinXd/Ayiin-Userbot"),
+                        "https://github.com/NotLumiere/Lumiere-Userbot"),
                 ],
             ],
             link_preview=False,
@@ -106,23 +106,23 @@ async def inline_handler(event):
         )
     else:
         result = builder.article(
-            title="✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ✨",
-            description="Ayiin - Userbot | Telethon",
-            url="https://t.me/AyiinChannel",
+            title="× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ×",
+            description="Lumiere - Userbot | Telethon",
+            url="https://t.me/Lumiereproject",
             thumb=InputWebDocument(
                 var.INLINE_PIC,
                 0,
                 "image/jpeg",
                 []),
-            text=f"**Ayiin-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ:** {var.BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @AyiinChannel\n➖➖➖➖➖➖➖➖➖➖",
+            text=f"**Lumiere-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴀssɪsᴛᴀɴᴛ:** {var.BOT_USERNAME}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs :** @Qwertystore\n➖➖➖➖➖➖➖➖➖➖",
             buttons=[
                 [
                     custom.Button.url(
                         "ɢʀᴏᴜᴘ",
-                        "https://t.me/AyiinChats"),
+                        "https://t.me/Lumieresupport"),
                     custom.Button.url(
                         "ʀᴇᴘᴏ",
-                        "https://github.com/AyiinXd/Ayiin-Userbot"),
+                        "https://github.com/NotLumiere/Lumiere-Userbot"),
                 ],
             ],
             link_preview=False,
