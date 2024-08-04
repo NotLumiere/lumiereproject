@@ -125,7 +125,7 @@ async def autobot():
                 sys.exit(1)
         filogo = random.choice(
             [
-                "https://telegra.ph/ʟᴜᴄɪꜰᴇʀ-ᴋᴘꜱɪ-s-Media-08-04",
+                "https://graph.org/file/18a02fee581e85f03feba.jpg",
                 "Lumiere/resources/assbot.jpg",
             ]
         )
