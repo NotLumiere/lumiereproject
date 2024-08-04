@@ -6,12 +6,35 @@
 """Userbot module containing commands for interacting with dogbin(https://del.dog)"""
 
 import os
-
+import re
 from Lumiere import CMD_HELP
 from Lumiere.lumi import ayiin_cmd, eod, eor
 from Lumiere.lumi.pastebin import PasteBin
 
+from telethon.errors.rpcerrorlist import (ChatForwardsRestrictedError,
+                                          MediaEmptyError)
+
 from . import cmd, var
+
+
+try:
+    import cv2
+except ImportError:
+    cv2 = None
+
+try:
+    from htmlwebshot import WebShot
+except ImportError:
+    WebShot = None
+
+def get_chat_and_msgid(link):
+    matches = re.findall("https:\\/\\/t\\.me\\/(c\\/|)(.*)\\/(.*)", link)
+    if not matches:
+        return None, None
+    _, chat, msg_id = matches[0]
+    if chat.isdigit():
+        chat = int("-100" + chat)
+    return chat, int(msg_id)
 
 
 @ayiin_cmd(pattern="paste(?: (-d|-n|-h|-k|-s)|$)?(?: ([\\s\\S]+)|$)")
@@ -59,9 +82,49 @@ async def paste(pstl):
     await xxnx.edit(reply_text, link_preview=False)
 
 
+@ayiin_cmd(pattern="[cC]opy(?: |$)(.*)")
+async def get_restriced_msg(event):
+    match = event.pattern_match.group(1).strip()
+    if not match:
+        await event.eor("`Please provide a link!`", time=5)
+        return
+    xx = await event.eor("Prosesing...")
+    chat, msg = get_chat_and_msgid(match)
+    if not (chat and msg):
+        return await event.eor(
+            f"`404: Not Found!`\nEg: `https://t.me/Gabutanlu/8 or `https://t.me/c/1713457115/8`"
+        )
+    try:
+        message = await event.client.get_messages(chat, ids=msg)
+    except BaseException as er:
+        return await event.eor(f"**ERROR**\n`{er}`")
+    try:
+        await event.client.send_message(event.chat_id, message)
+        await xx.try_delete()
+        return
+    except ChatForwardsRestrictedError:
+        pass
+    except MediaEmptyError:
+        pass
+    if message.media and message.document:
+        thumb = None
+        if message.document.thumbs:
+            thumb = await message.download_media(thumb=-1)
+        media = await event.client.download_media(message.document)
+        await xx.edit("`Uploading...`")
+        uploaded = await event.client.send_file(
+            event.chat_id, file=media, caption="**Done.**"
+        )
+        await xx.delete()
+        if thumb:
+            os.remove(thumb)
+
+
 CMD_HELP.update(
     {
-        "paste": f"**Plugin : **`paste`\
+        "copy": f"**Plugin : **`copy`\
+        \n\n  »  **Perintah :** `{cmd}copy` <link>\
+        \n  »  **Kegunaan : **Untuk Mengcopy pesan/media\
         \n\n  »  **Perintah :** `{cmd}paste` <text/reply>\
         \n  »  **Kegunaan : **Untuk Menyimpan text ke ke layanan pastebin gunakan flags [`-d`, `-n`, `-h`, `-s`, `-k`]\
         \n\n  •  **NOTE :** `-d` = **Dogbin** atau `-n` = **Nekobin** atau `-h` = **Hastebin** atau `-k` = **katbin** atau `-s` = **spacebin**\
