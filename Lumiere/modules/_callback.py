@@ -46,17 +46,17 @@ async def on_plug_in_callback_query_handler(event):
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
         buttons = paginate_help(0, dugmeler, "helpme")
-        text = f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
+        text = f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n× **ᴏᴡɴᴇʀ** {user.first_name}\n× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
         await event.edit(
+                file=logoyins,
+                link_preview=False,
                 text=(
                         f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n"
-                        f"⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n"
-                        f"⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n"
-                        f"⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
+                        f"× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n"
+                        f"× **ᴏᴡɴᴇʀ :** {user.first_name}\n"
+                        f"× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
                 ),
-                file=logoyins,
                 buttons=buttons,
-                link_preview=False
         )
     else:
         reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
@@ -77,7 +77,7 @@ async def inline_handler(event):
         result = await event.builder.photo(
             file=logoyins,
             link_preview=False,
-            text=f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
+            text=f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n× **ᴏᴡɴᴇʀ :** {user.first_name}\n× **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
             buttons=main_help_button,
         )
     elif query.startswith("repo"):
