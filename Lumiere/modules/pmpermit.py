@@ -134,7 +134,7 @@ async def permitpm(event):
                     )
 
 
-@Ayiin.on(events.NewMessage(outgoing=True))
+@Lumi.on(events.NewMessage(outgoing=True))
 async def auto_accept(event):
     """Will approve automatically if you texted them first."""
     if not get_mode_permit():
