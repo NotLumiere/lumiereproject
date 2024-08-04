@@ -16,10 +16,10 @@ dugmeler = CMD_HELP
 logo = var.ALIVE_LOGO
 logoyins = random.choice(
         [
-            "https://telegra.ph/file/9f8e73d387f25b7f27ce5.jpg",
-            "https://telegra.ph/file/c935d34b48e45fba22b03.jpg",
-            "https://telegra.ph/file/392f69c8717c91b1e8a3b.jpg",
-            "https://telegra.ph/file/4c5b756dd13d7a88c866b.jpg",
+        "https://telegra.ph//file/ebdc09e59b024b3e2e954.jpg",
+        "https://telegra.ph//file/51d81ee411cb2f4ef11a4.jpg",
+        "https://telegra.ph//file/3a7388a7149bca0395a71.jpg",
+        "https://telegra.ph//file/22de02cf205498bd3cad1.jpg",
         ]
 )
 main_help_button = [
@@ -46,7 +46,7 @@ async def on_plug_in_callback_query_handler(event):
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
         buttons = paginate_help(0, dugmeler, "helpme")
-        text = f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
+        text = f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**"
         await event.edit(
             text,
             file=logoyins,
@@ -72,7 +72,7 @@ async def inline_handler(event):
         result = await event.builder.photo(
             file=logoyins,
             link_preview=False,
-            text=f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
+            text=f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n⍟ **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n⍟ **ᴏᴡɴᴇʀ :** {user.first_name}\n⍟ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**",
             buttons=main_help_button,
         )
     elif query.startswith("repo"):
@@ -184,7 +184,7 @@ async def on_plug_in_callback_query_handler(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:  # @Kyy-Userbot
@@ -200,13 +200,13 @@ async def on_plug_in_callback_query_handler(event):
     )
 )
 async def gback_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:  # @Ayiin-Userbot
         # https://t.me/TelethonChat/115200
         text = (
-            f"**✨ ᴀʏɪɪɴ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**")
+            f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n✧ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✧ **ᴊᴜᴍʟᴀʜ :** {len(dugmeler)} **Modules**")
         await event.edit(
             text,
             file=logoyins,
@@ -216,7 +216,7 @@ async def gback_handler(event):
 
 @bot.on(events.CallbackQuery(data=b"inline_yins"))
 async def about(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
@@ -243,7 +243,7 @@ async def about(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     cmd = var.CMD_HANDLER
