@@ -163,7 +163,7 @@ async def inline_handler(event):
     )
 )
 async def on_plug_in_callback_query_handler(event):
-    user = await Ayiin.get_me()
+    user = await Lumi.get_me()
     uid = user.id
     owner = user.first_name
     if event.query.user_id == uid or event.query.user_id in var.SUDO_USERS:
