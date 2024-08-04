@@ -11,8 +11,7 @@ from Lumiere import CMD_HELP
 from Lumiere.lumi import ayiin_cmd, eod, eor
 from Lumiere.lumi.pastebin import PasteBin
 
-from telethon.errors.rpcerrorlist import (ChatForwardsRestrictedError,
-                                          MediaEmptyError)
+from telethon.errors.rpcerrorlist import ChatForwardsRestrictedError, MediaEmptyError
 
 from . import cmd, var
 
