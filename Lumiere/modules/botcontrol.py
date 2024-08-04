@@ -8,7 +8,7 @@ import io
 import re
 import time
 from datetime import datetime
-from os import remove
+from os import remove, environ, execle
 
 import heroku3
 from telegraph import Telegraph, upload_file
@@ -969,6 +969,20 @@ async def _(event):
     await event.answer(pin, cache_time=0, alert=True)
 
 
+@callback(data=re.compile(b"restart"))
+async def rest(event):
+    await event.delete()
+    pru = event.sender_id
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(f"**Restarting Userbot, WAIT UNTIL IT DONE.**")
+        
+        if var.BOTLOG_CHATID:
+            await event.client.send_message(
+                var.BOTLOG_CHATID, "Restart Done boss!! langsung pake aja"
+            )
+    args = [sys.executable, "-m", "Lumiere"]
+    execle(sys.executable, *args, environ)
+
 @callback(data=re.compile(b"uptimebot"))
 async def _(event):
     uptime = await get_readable_time((time.time() - StartTime))
@@ -1016,7 +1030,7 @@ async def bot_start(event):
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat menghubungi [{owner.first_name}](tg://user?id={owner.id}) dari sini.**\
                         \n**Jangan melakukan spam atau anda akan di Banned**\
-                        \n\n**Powered by** [UserBot](https://github.com/AyiinXd/Ayiin-Userbot)"
+                        \n\n**Powered by** [UserBot](https://t.me/Adivenstore)"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{var.GROUP}"),
@@ -1036,6 +1050,7 @@ async def bot_start(event):
                 Button.inline("ᴘɪɴɢ", data="pingbot"),
                 Button.inline("ᴜᴘᴛɪᴍᴇ", data="uptimebot"),
             ),
+            (Button.inline("Restart", data="restart"),),
             (Button.inline("ᴄʟᴏsᴇ", data="pmclose"),),
         ]
     try:
