@@ -54,8 +54,8 @@ async def on_plug_in_callback_query_handler(event):
                 text=(
                         f"**× ʟᴜᴍɪᴇʀᴇ-ᴜsᴇʀʙᴏᴛ ɪɴʟɪɴᴇ ᴍᴇɴᴜ ×**\n\n"
                         f"× **ᴅᴇᴘʟᴏʏ :** •[{HOSTED_ON}]•\n"
-                        f"× **ᴏᴡɴᴇʀ :** {user.first_name}\n"
-                        f"× **ᴊᴜᴍʟᴀʜ :** 166 **Modules**"
+                        f"× **ᴏᴡɴᴇʀ :** {owner}\n"
+                        f"× **ᴊᴜᴍʟᴀʜ :** 161 **Modules**"
                 ),
                 buttons=buttons,
         )
