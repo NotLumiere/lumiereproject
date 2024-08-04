@@ -5,7 +5,7 @@
 
 FROM ayiinxd/ayiin:xd
 
-RUN git clone -b Ayiin-Userbot https://github.com/AyiinXd/Ayiin-Userbot /home/ayiinuserbot/ \
+RUN git clone -b Lumiere-Userbot https://github.com/NotLumiere/lumiereproject /home/ayiinuserbot/ \
     && chmod 777 /home/ayiinuserbot \
     && mkdir /home/ayiinuserbot/bin/
 
