@@ -142,7 +142,7 @@ async def users(event):
 @callback(data=re.compile(b"settings"))
 async def botsettings(event):
     await event.delete()
-    im = await Ayiin.get_me()
+    im = await Lumi.get_me()
     if event.query.user_id == im.id:
         await bot.send_message(
             event.chat_id,
@@ -982,7 +982,7 @@ async def bot_start(event):
     user = await event.client.get_me()
     if check_is_black_list(chat.id):
         return
-    owner = await Ayiin.get_me()
+    owner = await Lumi.get_me()
     reply_to = await reply_id(event)
     mention = f"[{chat.first_name}](tg://user?id={chat.id})"
     my_mention = f"[{user.first_name}](tg://user?id={user.id})"
