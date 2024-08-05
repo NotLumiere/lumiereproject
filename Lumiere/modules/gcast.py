@@ -89,7 +89,7 @@ async def gucast(event):
     )
 
 
-@ayiin_cmd(pattern="blchat$")
+@ayiin_cmd(pattern="listbl$")
 async def sudo(event):
     me = await event.client.get_me()
     BLACKLIST_GCAST = AyiinChanger(cek_gcast(me.id))
@@ -105,13 +105,13 @@ async def sudo(event):
 📚 **Blacklist Group:**
 {text}
 
-Ketik `{cmd}addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast."""
+Ketik `{cmd}addbl` di grup yang ingin anda tambahkan ke daftar blacklist gcast."""
         )
     else:
         await eod(event, "**🔮 Blacklist GCAST:** `Disabled`")
 
 
-@ayiin_cmd(pattern="addblacklist(?:\\s|$)([\\s\\S]*)")
+@ayiin_cmd(pattern="addbl(?:\\s|$)([\\s\\S]*)")
 async def add(event):
     me = await event.client.get_me()
     BLACKLIST_GCAST = AyiinChanger(cek_gcast(me.id))
@@ -129,7 +129,7 @@ async def add(event):
         )
 
 
-@ayiin_cmd(pattern="delblacklist(?:\\s|$)([\\s\\S]*)")
+@ayiin_cmd(pattern="delbl(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     xxx = await eor(event, '**Memproses...**')
     me = await event.client.get_me()
@@ -152,11 +152,11 @@ CMD_HELP.update(
         "gcast": f"**Plugin : **`gcast`\
         \n\n  »  **Perintah :** `{cmd}gcast` <text/reply media>\
         \n  »  **Kegunaan : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
-        \n\n  »  **Perintah :** `{cmd}blchat`\
+        \n\n  »  **Perintah :** `{cmd}listbl`\
         \n  »  **Kegunaan : **Untuk Mengecek informasi daftar blacklist gcast.\
-        \n\n  »  **Perintah :** `{cmd}addblacklist`\
+        \n\n  »  **Perintah :** `{cmd}addbl`\
         \n  »  **Kegunaan : **Untuk Menambahkan grup tersebut ke blacklist gcast.\
-        \n\n  »  **Perintah :** `{cmd}delblacklist`\
+        \n\n  »  **Perintah :** `{cmd}delbl`\
         \n  »  **Kegunaan : **Untuk Menghapus grup tersebut dari blacklist gcast.\
         \n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.\
     "
