@@ -979,7 +979,7 @@ async def rest(event):
         
         if var.BOTLOG_CHATID:
             await event.client.send_message(
-                var.BOTLOG_CHATID, "Restart Done boss!! langsung pake aja"
+                var.BOTLOG_CHATID, "Restart lagi di proses, tunggu sampe muncul notifikasi berhasil di aktifkan."
             )
     args = [sys.executable, "-m", "Lumiere"]
     execle(sys.executable, *args, environ)
