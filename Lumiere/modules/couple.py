@@ -44,7 +44,7 @@ async def couple(bucin):
 
 CMD_HELP.update(
     {
-        "yinscouple": f"**Plugin :** `yinscouple`\
+        "couple": f"**Plugin :** `couple`\
         \n\n  »  **Perintah :** `{cmd}couple`\
         \n  »  **Kegunaan :** __Untuk Mendapatkan Foto Couple Secara Random.__\
     "
