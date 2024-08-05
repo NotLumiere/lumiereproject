@@ -103,8 +103,8 @@ async def psu(event):
     help_string += "**Iɴғᴏʀᴍᴀsɪ Mᴇsɪɴ**\n"
     help_string += f"**Pʏᴛʜᴏɴ :** `{sys.version}`\n"
     help_string += f"**Tᴇʟᴇᴛʜᴏɴ :**`{__version__}`\n"
-    help_string += f"**Pʏ-Aʏɪɪɴ :** `0.4.6`\n"
-    help_string += f"**Aʏɪɪɴ-Vᴇʀsɪᴏɴ :** `{var.BOT_VER} [{HOSTED_ON}]`"
+    help_string += f"**Pʏ-Lᴜᴍɪᴇʀᴇ :** `0.5.6`\n"
+    help_string += f"**Lᴜᴍɪᴇʀᴇ-Vᴇʀsɪᴏɴ :** `{var.BOT_VER} [{HOSTED_ON}]`"
     await edit_or_reply(event, help_string)
 
 
@@ -165,7 +165,7 @@ async def bot_ver(event):
 
         await edit_or_reply(
             event,
-            "✧ **Userbot Versi :** " f"`{verout}`" "\n✧ **Revisi :** " f"`{revout}`",
+            "× **Userbot Versi :** " f"`{verout}`" "\n× **Revisi :** " f"`{revout}`",
         )
     else:
         await edit_or_reply(
@@ -180,17 +180,17 @@ async def amireallyalive(alive):
     await alive.edit("😈")
     await asyncio.sleep(3)
     output = (
-        f"**THE [Lumiere-Userbot](https://github.com/NotLumiere/Lumiere-Userbot)**\n\n"
+        f"**THE [𝗟𝗨𝗠𝗜𝗘𝗥𝗘-𝗨𝗦𝗘𝗥𝗕𝗢𝗧](https://github.com/NotLumiere/Lumiere-Userbot)**\n\n"
         f"**{alive_text}**\n\n"
         f"╭✠╼━━━━━━━━━━━━━━━✠╮\n"
-        f"{emoji} **Aʏɪɪɴ Vᴇʀsɪᴏɴ :** `{var.BOT_VER}`\n"
+        f"{emoji} **Lᴜᴍɪᴇʀᴇ Vᴇʀsɪᴏɴ :** `{var.BOT_VER}`\n"
         f"{emoji} **Bᴏᴛ Uᴘᴛɪᴍᴇ :** `{uptime}`\n"
         f"{emoji} **Dᴇᴘʟᴏʏ Oɴ :** {HOSTED_ON}\n"
         f"{emoji} **Mᴏᴅᴜʟᴇs :** `{len(modules)} Modules` \n"
         f"{emoji} **Oᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id}) \n"
         f"{emoji} **Pʏᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{python_version()}` \n"
         f"{emoji} **PʏTɢCᴀʟʟs Vᴇʀsɪᴏɴ :** `Unlimited` \n"
-        f"{emoji} **Pʏ-Aʏɪɪɴ Vᴇʀsɪᴏɴ :** `0.4.6`\n"
+        f"{emoji} **Pʏ-Lᴜᴍɪᴇʀᴇ Vᴇʀsɪᴏɴ :** `0.5.6`\n"
         f"{emoji} **Tᴇʟᴇᴛʜᴏɴ Vᴇʀsɪᴏɴ :** `{version.__version__}` \n"
         "╰✠╼━━━━━━━━━━━━━━━✠╯\n\n"
     )
