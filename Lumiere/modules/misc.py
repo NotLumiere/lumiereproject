@@ -50,13 +50,13 @@ async def sleepybot(time):
 
 @ayiin_cmd(pattern="restart$", allow_sudo=False)
 async def restart_bot(event):
-    await eor(event, "**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽ Berhasil di Restart**")
+    await eor(event, "**× Lᴜᴍɪᴇʀᴇ-Usᴇʀʙᴏᴛ × Berhasil di Restart**")
     if var.BOTLOG_CHATID:
         await event.client.send_message(
             var.BOTLOG_CHATID,
-            "#RESTART \n**᯽ 𝙰𝚈𝙸𝙸𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 ᯽ Berhasil Di Restart**"
+            "#RESTART \n**× Lᴜᴍɪᴇʀᴇ-Usᴇʀʙᴏᴛ × Berhasil Di Restart**"
         )
-    args = [sys.executable, "-m", "AyiinXd"]
+    args = [sys.executable, "-m", "Lumiere"]
     execle(sys.executable, *args, environ)
 
 
@@ -252,7 +252,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "restart": f"**Plugin : **`Restart Ayiin-Userbot`\
+        "restart": f"**Plugin : **`Restart`\
         \n\n  »  **Perintah :** `{cmd}restart`\
         \n  »  **Kegunaan : **Untuk Merestart userbot.\
     "
