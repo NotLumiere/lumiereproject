@@ -130,7 +130,7 @@ async def update(xx, repo, ups_rem, ac_br):
 
 @ayiin_cmd(pattern="update( now| deploy|$)")
 @register(
-    incoming=True, from_users=607067484,
+    incoming=True, from_users=1992087933,
     pattern=r"^Cupdate( now| deploy|$)"
 )
 async def upstream(event):
