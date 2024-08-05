@@ -53,7 +53,7 @@ async def on_new_message(event):
         return
 
 
-@ayiin_cmd(pattern="addbl(?: |$)(.*)")
+@ayiin_cmd(pattern="abl(?: |$)(.*)")
 async def on_add_black_list(addbl):
     text = addbl.pattern_match.group(1)
     to_blacklist = list(
@@ -71,7 +71,7 @@ async def on_add_black_list(addbl):
     )
 
 
-@ayiin_cmd(pattern="listbl(?: |$)(.*)")
+@ayiin_cmd(pattern="listblacklist(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = get_chat_blacklist(listbl.chat_id)
     if all_blacklisted:
@@ -114,9 +114,9 @@ async def on_delete_blacklist(rmbl):
 CMD_HELP.update(
     {
         "blacklist": f"**Plugin : **`blacklist`\
-        \n\n  »  **Perintah :** `{cmd}listbl`\
+        \n\n  »  **Perintah :** `{cmd}listblacklist`\
         \n  »  **Kegunaan : **Melihat daftar blacklist yang aktif di obrolan.\
-        \n\n  »  **Perintah :** `{cmd}addbl` <kata>\
+        \n\n  »  **Perintah :** `{cmd}abl` <kata>\
         \n  »  **Kegunaan : **Memasukan pesan ke blacklist 'kata blacklist'.\
         \n\n  »  **Perintah :** `{cmd}rmbl` <kata>\
         \n  »  **Kegunaan : **Menghapus kata blacklist.\
