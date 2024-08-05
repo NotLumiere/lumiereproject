@@ -27,7 +27,7 @@ from Lumiere.modules import ALL_MODULES
 ON = '''
 ❏ ʟᴜᴍɪᴇʀᴇ ᴜsᴇʀʙᴏᴛ ʙᴇʀʜᴀsɪʟ ᴅɪᴀᴋᴛɪғᴋᴀɴ
 ╭╼┅━━━━━╍━━━━━┅╾
-├▹ ᴀʏɪɪɴ ᴠᴇʀsɪᴏɴ : {} •[{}]•
+├▹ ʟᴜᴍɪᴇʀᴇ ᴠᴇʀsɪᴏɴ : {} •[{}]•
 ├▹ ᴜsᴇʀʙᴏᴛ ɪᴅ : {}
 ├▹ ᴜsᴇʀʙᴏᴛ ɴᴀᴍᴇ : {}
 ├▹ ᴀssɪsᴛᴀɴᴛ ɪᴅ : {}
@@ -50,7 +50,7 @@ async def LumiMain():
         LOGS.info(f"Python Version - {python_version()}")
         LOGS.info(f"Telethon Version - {version.__version__} [Layer: {LAYER}]")
         LOGS.info(f"Userbot Version - {var.BOT_VER}")
-        LOGS.info("[✨ BERHASIL DIAKTIFKAN! ✨]")
+        LOGS.info("[✅ BERHASIL DIAKTIFKAN!]")
         await checking(Lumi)
         me = await Lumi.get_me()
         bo = await bot.get_me()
