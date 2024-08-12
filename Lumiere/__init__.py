@@ -50,6 +50,7 @@ try:
         connection=ConnectionTcpAbridged,
         auto_reconnect=True,
         connection_retries=None,
+        device_model="Lumiere-Userbot",
     )
     setattr(
         Lumi,
