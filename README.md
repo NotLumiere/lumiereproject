@@ -71,7 +71,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 <summary><b>🔗 Deploy To Heroku</b></summary>
 <br>
 
-<a href="https://dashboard.heroku.com/new?template=https://github.com/NotLumiere/Lumiere-Userbot"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/NotLumiere/Lumiereproject"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 </details>
